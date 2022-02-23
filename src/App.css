@@ -36,3 +36,34 @@
     transform: rotate(360deg);
   }
 }
+
+.bigred {
+  font-family: "Courier New";
+  font-style: italic;
+  font-size: xx-large;
+  color: red;
+}
+
+.divBox {
+  width: 20px;
+  height: 20px;
+  border-style:solid;
+  border-color: black;
+  color: red;
+}
+
+.keyboard {
+  border-style:solid;
+  border-color: black;
+  border-width: 1px;
+}
+
+.keybox {
+  border-style:solid;
+  border-color: blue;
+  border-radius: 5%;
+  color: red;
+  border-width: 1px;
+  width: 30px;
+  height: 30px;
+}
