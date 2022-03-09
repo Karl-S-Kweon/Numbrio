@@ -30,22 +30,28 @@ const BlockRow = (props) => {
 
     let index = [0, 1, 2, 3];
     
+    let css = {
+        borderColor: 'grey',
+        borderWidth: '1px'
+    }
+
+    // make this under if-else for 'Enter'
     let Blocks = index.map((idx) => (
-        <Block value={props.value[idx]} key={idx} />
+        <Block value={props.value[idx]} css={props.value[idx] !== undefined ? ['dimgrey', 'pulse'] : ['darkgrey']} key={idx} />
         // getFromChild={msgFromChild}
     ));
-        
+    
     return (
         <div
             style={{
                 // this box's width/height
                 width: '99vw',
-                height: '45vh',
+                height: '8vh',
 
                 // border line
-                borderStyle: 'solid',
-                borderColor: 'red',
-                borderWidth: '1px',
+                // borderStyle: 'solid',
+                // borderColor: 'red',
+                // borderWidth: '1px',
 
                 // content alignment
                 display: "flex",
@@ -61,12 +67,12 @@ const BlockRow = (props) => {
                 style={{
                     // this box's width/height
                     width: '100vw',
-                    height: '7.5vh',
+                    height: '5vh',
 
                     // border line
-                    borderStyle: 'solid',
-                    borderColor: 'blue',
-                    borderWidth: '1px',
+                    // borderStyle: 'solid',
+                    // borderColor: 'blue',
+                    // borderWidth: '1px',
 
                     // content alignment
                     display: "flex",

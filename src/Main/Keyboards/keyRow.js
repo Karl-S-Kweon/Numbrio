@@ -42,9 +42,9 @@ const KeyRow = (props) => {
                 height: '8vh',
 
                 // border line
-                borderStyle: 'solid',
-                borderColor: 'red',
-                borderWidth: '1px',
+                // borderStyle: 'solid',
+                // borderColor: 'red',
+                // borderWidth: '1px',
 
                 // content alignment
                 display: "flex",
@@ -80,7 +80,7 @@ const KeyRow = (props) => {
             <Snackbar
                 open={state.status}
                 message={state.data}
-                autoHideDuration={1}
+                autoHideDuration={0}
                 onClose={sendKeyData}
             />
         </div>

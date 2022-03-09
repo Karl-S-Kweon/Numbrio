@@ -43,9 +43,9 @@ const Keyboards = (props) => {
             textAlign:"center",
             
             // Border Line
-            border: "solid",
-            borderColor: 'yellow',
-            borderWidth: '1px',
+            // border: "solid",
+            // borderColor: 'orange',
+            // borderWidth: '1px',
         }}
         >
             <KeyRow

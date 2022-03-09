@@ -12,22 +12,28 @@ const Numbrio = () => {
 
     const reducer = (state, newState) => ({ ...state, ...newState });
     const [state, setState] = useReducer(reducer, initialState);
-    
+
     const msgFromChild = (msg) => {
         // console.log("before pop: " + state.data)
-        if(msg.toString().toLowerCase() === 'enter')
-        { return }
-        if(msg.toString().toLowerCase() === 'del')
-        { state.data.pop() }
-        else if(state.data.length < 4) {
+        if (msg.toString().toLowerCase() === 'enter') {
+            msg = ''
+            return
+        }
+        if (msg.toString().toLowerCase() === 'del') {
+            if (state.data.length !== 0) {
+                state.data.pop()
+            }
+            msg = ''
+        }
+        else if (state.data.length < 4) {
             state.data.push(msg)
-        }        
+        }
         // console.log("After pop: " + state.data)
-        setState({data: state.data})
+        setState({ data: state.data })
     };
-    
+
     return <>
-        <MysterioBlocks pushToChild={state.data}/>
+        <MysterioBlocks pushToChild={state.data} />
         <Keyboards getFromChild={msgFromChild} />
     </>;
 };

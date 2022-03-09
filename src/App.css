@@ -15,7 +15,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 98vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,7 +55,7 @@
 .keyboard {
   border-style:solid;
   border-color: black;
-  border-width: 1px;
+  border-width: 0px;
 }
 
 .keyRow {
@@ -80,4 +80,53 @@
   border-color: white;
   border-width: 1px;   
     */
+}
+
+/*  Source
+https://stackoverflow.com/questions/50380360/pure-css-zoom-animation-based-on-timer
+*/
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1)
+  }
+  15% {
+    -webkit-transform: scaleX(1.01);
+    transform: scaleX(1.01)
+  }
+  30% {
+    -webkit-transform: scaleX(1.025);
+    transform: scaleX(1.025)
+  }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05)
+  }
+  to {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1)
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05)
+  }
+  15% {
+    -webkit-transform: scale3d(1.04, 1.04, 1.04);
+    transform: scale3d(1.04, 1.04, 1.04)
+  }
+  30% {
+    -webkit-transform: scale3d(1.025, 1.025, 1.025);
+    transform: scale3d(1.025, 1.025, 1.025)
+  }
+  50% {
+    -webkit-transform: scale3d(1.01, 1.01, 1.01);
+    transform: scale3d(1.01, 1.01, 1.01)
+  }
+  to {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1)
+  }
 }
