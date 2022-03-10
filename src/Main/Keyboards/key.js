@@ -25,7 +25,7 @@ const Key = (props) => {
             style={{
                 height: '100%',
                 width: width,
-                
+                backgroundColor: props.pointer[1],
                 // Border Line
                 borderStyle: 'solid',
                 borderColor: 'grey',
@@ -33,7 +33,16 @@ const Key = (props) => {
                 borderWidth: '1px',
                 
                 // 
-                margin: '0px 3px'
+                margin: '0px 3px',
+                
+                //
+                pointerEvents: props.pointer[0],
+                
+                // animations
+                animationName: props.pointer[2],
+                /*animation-fill-mode: both;*/
+                animationDuration: '0.08s',
+                animationIterationCount: 'initial',
             }}
         >
             <div

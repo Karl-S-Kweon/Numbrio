@@ -47,14 +47,17 @@ const Keyboards = (props) => {
             // borderColor: 'orange',
             // borderWidth: '1px',
         }}
+        // Separate Component => [ Enter ][ 7 8 9 0 ][ Del ]
         >
             <KeyRow
                 getFromChild={msgFromChild}
                 keyRange={[1, 2, 3, 4, 5, 6]}
+                data={props.pushToChild}
             />
             <KeyRow
                 getFromChild={msgFromChild}
                 keyRange={["Enter", 7, 8, 9, 0, "Del"]}
+                data={props.pushToChild}
             />
             <Snackbar
                 open={state.status}

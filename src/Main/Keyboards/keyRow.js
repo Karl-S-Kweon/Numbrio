@@ -22,18 +22,24 @@ const KeyRow = (props) => {
         }
         setState({ status: false });
     };
-
+    
     const msgFromChild = (msg) => {
         setState({ data: msg, status: true });
+        props.data[1] = []
         // console.log(state.data)
     };
 
     let index = props.keyRange;
 
-    let keyboxes = index.map((idx) => (
-        <Key getFromChild={msgFromChild} value={idx} key={idx} />
-    ));
+    // console.log(props.data[1].includes('Del'));
 
+    let keyboxes = index.map( idx => ( props.data[0].includes(idx) === true ?
+        <Key getFromChild={msgFromChild} value={idx} key={idx} pointer={['none', 'dimgrey', 'pulse']} /> :
+        ( props.data[1].includes(idx) === true ? 
+        <Key getFromChild={msgFromChild} value={idx} key={idx} pointer={['auto', 'white', 'pulse']}/>: 
+        <Key getFromChild={msgFromChild} value={idx} key={idx} pointer={['auto', 'white']}/>)
+    ));
+    
     return (
         <div
             style={{

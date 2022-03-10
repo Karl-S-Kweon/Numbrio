@@ -23,7 +23,7 @@ const MysterioBox = (props) => {
     let row = 0
     
     let BlockRows = index.map((idx) => ( idx === row ? 
-        (<BlockRow value={props.pushToChild} key={idx} row={row} />) :
+        (<BlockRow value={props.pushToChild[0]} key={idx} row={row} />) :
         (<BlockRow value={[]} key={idx} row={row} />)
     ));
     

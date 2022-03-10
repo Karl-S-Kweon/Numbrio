@@ -28,7 +28,7 @@ const Block = (props) => {
                 // animations
                 animationName: props.css[1],
                 /*animation-fill-mode: both;*/
-                animationDuration: '0.2s',
+                animationDuration: '0.1s',
                 animationIterationCount: 'initial',
             }}
         >
