@@ -1,0 +1,9 @@
+- useState( initial value , setter )
+  ex ) var state = useState(...)
+       var state = state[0] = initial value, variable;
+	   var setState = state[1] = setter	   , function()
+	   
+	   => 축약형
+	   var [state, setState] = useState(_init_value);
+	   
+	버튼의 onClick 등의 동작에서 setter 펑션을 사용하면 state 값이 변화되어 상태 변화 값을 렌더링 할 수 있다.

@@ -1,19 +1,23 @@
 import '../../App.css';
-import React from 'react';
+import React, {useEffect} from 'react';
 
 const Block = (props) => {
 
-    let zoom = {
+    useEffect(()=> {
+        sendKeyData()
+    })
 
-    }
-    
+    const sendKeyData = () => {
+        props.fromChild('');
+    };
+
     return (
         // <div  className="divBox">{props.value}</div>
         <div
             style={{
                 // box Control
-                height: '60px',
-                width: '60px',
+                height: '95%',
+                width: '19%',
                 backgroundColor: 'white',
                 
                 // Border Line
@@ -34,7 +38,7 @@ const Block = (props) => {
         >
             <div
                 className="keyFont"
-            // onClick={senKeyData}
+                // onClick={senKeyData}
             >
                 {props.value}
             </div>

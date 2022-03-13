@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,7 +35,7 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
 .bigred {
   font-family: "Courier New";
@@ -81,6 +81,9 @@
   border-width: 1px;   
     */
 }
+
+button:focus {outline: none;}
+
 
 /*  Source
 https://stackoverflow.com/questions/50380360/pure-css-zoom-animation-based-on-timer
