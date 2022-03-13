@@ -1,6 +1,6 @@
 import '../../App.css';
 import React from 'react';
-
+import { Button } from "@material-ui/core";
 const Key = (props) => {
 
     const sendKeyData = () => {
@@ -43,7 +43,7 @@ const Key = (props) => {
                 // animationName: props.pointer[2],
                 animationName: props.animation,
                 /*animation-fill-mode: both;*/
-                animationDuration: '0.08s',
+                animationDuration: '0.2s',
                 animationIterationCount: 'initial',
             }}
         // onClick={senKeyData}

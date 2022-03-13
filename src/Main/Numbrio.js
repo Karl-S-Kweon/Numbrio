@@ -24,6 +24,7 @@ const Numbrio = () => {
             vertical: 'top',
             horizontal: 'center'
         },
+        gameOver: false,
     };
 
     const reducer = (state, newState) => ({ ...state, ...newState });
@@ -34,9 +35,12 @@ const Numbrio = () => {
         // state.data[1]=[];
     })
 
-    const msgFromBlock = (msg) => {
-        setState({ msg: '', snack: msg, snackOn: true })
+    // let gameOver = false
 
+    const msgFromBlock = (msg) => {
+        // console.log(msg[0], ' ', msg[1])
+        setState({ msg: '', snack: msg[0], snackOn: true, gameOver: msg[1] })
+        // gameOver = msg[1]
         state.data.push([])
         state.row++
     }
@@ -69,7 +73,8 @@ const Numbrio = () => {
             }
             // return
         }
-        else if (state.data[state.row].length < 4) {
+        else if (state.gameOver !== true && state.data[state.row].length < 4) {
+            console.log('gameOver? -->' + state.gameOver)
             if (state.data[state.row].length === 0) {
                 setState({ data: state.data })
             }
@@ -84,17 +89,18 @@ const Numbrio = () => {
     // console.log(state.data)
     // send keyboards the input array, to prevent selecting duplicate key value
     return <>
-        {<Snackbar
-            sx={{ height: "50%" }}
-            anchorOrigin={{vertical: 'top', horizontal: 'center'}}
-            open={state.snackOn}
-            message={state.snack}
-            autoHideDuration={2500}
-            onClose={snackbarClose}
-            key={'top' + 'center'}
-        />}
+
         <MysterioBlocks data={state.data} row={state.row} message={state.msg} getFromChild={msgFromBlock} />
         <Keyboards data={state.data} row={state.row} getFromChild={msgFromKey} />
+        {<Snackbar
+            sx={{ height: "50%" }}
+            anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+            open={state.snackOn}
+            message={state.snack}
+            autoHideDuration={2200}
+            onClose={snackbarClose}
+            // key={'top' + 'center'}
+        />}
     </>;
 };
 export default Numbrio;

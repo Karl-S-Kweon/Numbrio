@@ -1,9 +1,9 @@
 import '../../App.css';
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 
 const Block = (props) => {
 
-    useEffect(()=> {
+    useEffect(() => {
         sendKeyData()
     })
 
@@ -16,10 +16,10 @@ const Block = (props) => {
         <div
             style={{
                 // box Control
-                height: '95%',
-                width: '19%',
+                height: '50px',
+                width: '50px',
                 backgroundColor: 'white',
-                
+
                 // Border Line
                 borderStyle: 'solid',
                 borderColor: props.css[0],
@@ -28,7 +28,7 @@ const Block = (props) => {
 
                 // 
                 margin: '0px 7px',
-                
+
                 // animations
                 animationName: props.css[1],
                 /*animation-fill-mode: both;*/
@@ -37,8 +37,16 @@ const Block = (props) => {
             }}
         >
             <div
+                style={{
+                    // animations
+                    animationName: props.css[1],
+                    /*animation-fill-mode: both;*/
+                    animationDuration: '0.1s',
+                    animationIterationCount: 'initial',
+                }}
                 className="keyFont"
-                // onClick={senKeyData}
+
+            // onClick={senKeyData}
             >
                 {props.value}
             </div>

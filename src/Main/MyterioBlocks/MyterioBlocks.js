@@ -5,7 +5,7 @@ import BlockRow from './BlockRow'
 import Answer from '../Answer/AnswerKey'
 // import { Snackbar } from "@material-ui/core";
 
-let color = 'color: crimson'
+// let color = 'color: crimson'
 
 const MysterioBox = (props) => {
 
@@ -19,7 +19,8 @@ const MysterioBox = (props) => {
             ball: 0
         },
         msgOn: false,
-        msg: ''
+        // msg: '',
+        // gameOver: false
     };
 
     const reducer = (state, newState) => ({ ...state, ...newState });
@@ -31,9 +32,11 @@ const MysterioBox = (props) => {
         // console.log('Key input: ' + props.message)
         getTrialResult()
     })
-
+    let message = ''
+    let gameOver = false
     const getTrialResult = () => {
         let check = Answer
+
 
         if (props.data[props.row].length === 4 && props.message === 'Enter') {
             // console.log('Check begins')
@@ -59,6 +62,7 @@ const MysterioBox = (props) => {
                     });
                 }
                 i++;
+                return true
             })
             // console.log(`Result: ${state.result.strike} S, ${state.result.ball} B!`)
             // state.msgOn = true
@@ -68,11 +72,22 @@ const MysterioBox = (props) => {
                     ball: 0
                 },
                 msgOn: true,
-                msg: `Result: ${state.result.strike} S, ${state.result.ball} B !!`
-            })            
-            props.getFromChild(`Result: ${state.result.strike} S, ${state.result.ball} B !!`)
+                // msg: ( state.result.strike === 4 ? `You won this game! The Answer is ${check}!!!` : 
+                // (props.row === 7 ? `Oh, bad luck this time! The Answer is ${check}...` : `You got ${state.result.strike} S, ${state.result.ball} B !!`)),
+                // gameOver: ((props.row === 7 || state.result.strike === 4) ? true : false )
+            })
+            message = (state.result.strike === 4 ? `You won the game! The Answer is ${check}!!!` :
+                (props.row === 6 ? `Oh, bad luck this time...The Answer was ${check}...` : `You got ${state.result.strike} S, ${state.result.ball} B !!`))
+
+            gameOver = ((props.row === 6 || state.result.strike === 4) ? true : false)
+
+            sendToParent()
             // setState({ msgOn: true })
         }
+    }
+
+    const sendToParent = () => {
+        props.getFromChild([message, gameOver])
     }
 
     const msgFromChild = (msg) => {

@@ -37,20 +37,13 @@
   }
 } */
 
-.bigred {
-  font-family: "Courier New";
-  font-style: italic;
-  font-size: xx-large;
-  color: red;
-}
-
-.divBox {
+/* .divBox {
   width: 20px;
   height: 20px;
   border-style:solid;
   border-color: black;
   color: red;
-}
+} */
 
 .keyboard {
   border-style:solid;
@@ -90,20 +83,20 @@ https://stackoverflow.com/questions/50380360/pure-css-zoom-animation-based-on-ti
 */
 @-webkit-keyframes pulse {
   0% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1)
+  }
+  15% {
+    -webkit-transform: scale3d(1.09, 1.09, 1.09);
+    transform: scale3d(1.09, 1.09, 1.09)
+  }
+  30% {
     -webkit-transform: scale3d(1.05, 1.05, 1.05);
     transform: scale3d(1.05, 1.05, 1.05)
   }
-  15% {
-    -webkit-transform: scale3d(1.04, 1.04, 1.04);
-    transform: scale3d(1.04, 1.04, 1.04)
-  }
-  30% {
-    -webkit-transform: scale3d(1.025, 1.025, 1.025);
-    transform: scale3d(1.025, 1.025, 1.025)
-  }
   50% {
-    -webkit-transform: scale3d(1.01, 1.01, 1.01);
-    transform: scale3d(1.01, 1.01, 1.01)
+    -webkit-transform: scale3d(1.015, 1.015, 1.015);
+    transform: scale3d(1.015, 1.015, 1.015)
   }
   to {
     -webkit-transform: scaleX(1);
@@ -113,20 +106,20 @@ https://stackoverflow.com/questions/50380360/pure-css-zoom-animation-based-on-ti
 
 @keyframes pulse {
   0% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1)
+  }
+  15% {
+    -webkit-transform: scale3d(1.09, 1.09, 1.09);
+    transform: scale3d(1.09, 1.09, 1.09)
+  }
+  30% {
     -webkit-transform: scale3d(1.05, 1.05, 1.05);
     transform: scale3d(1.05, 1.05, 1.05)
   }
-  15% {
-    -webkit-transform: scale3d(1.04, 1.04, 1.04);
-    transform: scale3d(1.04, 1.04, 1.04)
-  }
-  30% {
-    -webkit-transform: scale3d(1.025, 1.025, 1.025);
-    transform: scale3d(1.025, 1.025, 1.025)
-  }
   50% {
-    -webkit-transform: scale3d(1.01, 1.01, 1.01);
-    transform: scale3d(1.01, 1.01, 1.01)
+    -webkit-transform: scale3d(1.015, 1.015, 1.015);
+    transform: scale3d(1.015, 1.015, 1.015)
   }
   to {
     -webkit-transform: scaleX(1);
