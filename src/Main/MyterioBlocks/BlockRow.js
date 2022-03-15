@@ -9,7 +9,7 @@ const BlockRow = (props) => {
     //     data: "",
     //     status: false,
     // };
-            
+
     // const reducer = (state, newState) => ({ ...state, ...newState });
     // const [state, setState] = useReducer(reducer, initialState);
 
@@ -54,22 +54,22 @@ const BlockRow = (props) => {
 
     // console.log(props.value)
     // make this under if-else for 'Enter'
-    let Blocks = index.map((idx) => ( 
-        <Block value={props.value[idx]} css={props.value[idx] !== undefined ? ['dimgrey', 'pulse'] : ['darkgrey']} key={idx} fromChild={msgFromChild}/>
+    let Blocks = index.map((idx) => (
+        <Block value={props.value[idx]} css={props.value[idx] !== undefined ? ['dimgrey', 'pulse'] : ['darkgrey']} key={idx} fromChild={msgFromChild} />
         // : <Block value={props.value[idx]} css={['darkgrey']} key={idx} />
         // getFromChild={msgFromChild}
     ));
-
+        
     return (
-        <div
+        <List
             style={{
                 // this box's width/height
-                width: '99%',
-                height: '16%',
+                width: '100%',
+                height: '5rem',
 
                 // border line
                 // borderStyle: 'solid',
-                // borderColor: 'red',
+                // borderColor: 'pink',
                 // borderWidth: '1px',
 
                 // content alignment
@@ -79,37 +79,38 @@ const BlockRow = (props) => {
 
                 // box space control
                 // padding: '0px',
-                margin: '1px 0px'
+                // margin: '5px 0px'
             }}
-        >
-            <List
-                style={{
-                    // this box's width/height
-                    width: '90%',
-                    height: '90%',
+        >{Blocks}</List>
+        // <div
+        //     style={{
+        //         // this box's width/height
+        //         width: '100vw',
+        //         height: '16%',
 
-                    // border line
-                    // borderStyle: 'solid',
-                    // borderColor: 'blue',
-                    // borderWidth: '1px',
+        //         // border line
+        //         // borderStyle: 'solid',
+        //         // borderColor: 'red',
+        //         // borderWidth: '1px',
 
-                    // content alignment
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
+        //         // content alignment
+        //         display: "flex",
+        //         justifyContent: "center",
+        //         alignItems: "center",
 
-                    // box space control
-                    // padding: '0px',
-                    // margin: '5px 0px'
-                }}
-            >{Blocks}</List>
-            {/* <Snackbar
-                open={state.status}
-                message={state.data}
-                autoHideDuration={1}
-                onClose={sendKeyData}
-            /> */}
-        </div>
+        //         // box space control
+        //         // padding: '0px',
+        //         margin: '1px 0px'
+        //     }}
+        // >
+
+        //     {/* <Snackbar
+        //         open={state.status}
+        //         message={state.data}
+        //         autoHideDuration={1}
+        //         onClose={sendKeyData}
+        //     /> */}
+        // </div>
     )
 };
 

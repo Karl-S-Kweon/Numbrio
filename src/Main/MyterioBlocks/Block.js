@@ -16,8 +16,8 @@ const Block = (props) => {
         <div
             style={{
                 // box Control
-                height: '50px',
-                width: '50px',
+                height: '4rem',
+                width: '4rem',
                 backgroundColor: 'white',
 
                 // Border Line
@@ -25,6 +25,7 @@ const Block = (props) => {
                 borderColor: props.css[0],
                 borderRadius: '50%',
                 borderWidth: '2px',
+
 
                 // 
                 margin: '0px 7px',
@@ -37,14 +38,13 @@ const Block = (props) => {
             }}
         >
             <div
+                className="blockFont"
                 style={{
+                    display: 'flex',
                     // animations
                     animationName: props.css[1],
-                    /*animation-fill-mode: both;*/
-                    animationDuration: '0.1s',
-                    animationIterationCount: 'initial',
+
                 }}
-                className="keyFont"
 
             // onClick={senKeyData}
             >

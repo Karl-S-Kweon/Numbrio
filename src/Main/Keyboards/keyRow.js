@@ -1,7 +1,8 @@
 import '../../App.css';
-import React, { useEffect} from 'react'; // , useReducer, useState 
-import { List } from "@material-ui/core";
+import React, { useEffect } from 'react'; // , useReducer, useState 
+import { List, Box, ButtonGroup } from "@material-ui/core";
 import Key from './key'
+import theme from '../../theme'
 
 const KeyRow = (props) => {
     // const initialState = {
@@ -73,7 +74,7 @@ const KeyRow = (props) => {
                 <Key getFromChild={msgFromChild} value={idx} key={idx} pointer={['none', 'dimgrey']} animation={'pulse'} length={length} /> :
                 <Key getFromChild={msgFromChild} value={idx} key={idx} pointer={['auto', 'gainsboro']} length={length} />
             )))
-            
+
         }
         // new sample
         /*
@@ -94,70 +95,97 @@ const KeyRow = (props) => {
 
     let width;
 
-    if (props.keyRange.length > 5) {
-        width = '100vw'
-    }
-    else if (props.keyRange.length > 2) {
-        width = '60vw'
-    }
-    else if (props.keyRange.length === 1) {
-        if (props.keyRange[0] === "Enter") {
-            width = '24vw';
-        }
-        else {
-            width = '15vw'
-        }
-    }
+    // if (props.keyRange.length > 5) {
+    //     width = '100vw'
+    // }
+    // else if (props.keyRange.length > 2) {
+    //     width = '60vw'
+    // }
+    // else if (props.keyRange.length === 1) {
+    //     if (props.keyRange[0] === "Enter") {
+    //         width = '24vw';
+    //     }
+    //     else {
+    //         width = '15vw'
+    //     }
+    // }
 
     // console.log("KeyRow - render")
     return (
-        <div
+        <ButtonGroup
+            // size="large"
             style={{
                 // this box's width/height
-                width: width,
-                height: '100%',
+                width: '100vw',
+                height: '48%',
 
                 // border line
                 // borderStyle: 'solid',
-                // borderColor: 'red',
+                // borderColor: 'blue',
                 // borderWidth: '1px',
 
                 // content alignment
-                display: "flex",
+                display: 'flex',
                 justifyContent: "center",
-                alignItems: "center", // vertical
+                alignItems: "center",
 
                 // box space control
-                // padding: '2px',
-                // margin: '1px 1px'
+                // padding: '0px',
+                margin: '0.5px'
             }}
-        >
-            <List
-                style={{
-                    // this box's width/height
-                    width: '100%',
-                    height: '85%',
+        >{
+                keyboxes()
+            }
 
-                    // border line
-                    // borderStyle: 'solid',
-                    // borderColor: 'blue',
-                    // borderWidth: '1px',
+        </ButtonGroup>
+        // <div
+        //     styles={{
+        //         // this box's width/height
+        //         width: '100vw',
+        //         height: '100%',
 
-                    // content alignment
-                    display: 'flex',
-                    justifyContent: "center",
-                    alignItems: "center",
+        //         // border line
+        //         borderStyle: 'solid',
+        //         borderColor: 'red',
+        //         borderWidth: '1px',
 
-                    // box space control
-                    // padding: '0px',
-                    // margin: '5px 0px'
-                }}
-            >{
-                    keyboxes()
-                }
+        //         // content alignment
+        //         display: "flex",
+        //         justifyContent: "center",
+        //         alignItems: "center", // vertical
 
-            </List>
-        </div>
+        //         // box space control
+        //         // padding: '0px',
+        //         // margin: '0px'
+        //     }}
+        // >
+        //     <ButtonGroup
+        //         // aria-label="small button group"
+        //         style={{
+        //             // this box's width/height
+        //             width: '100%',
+        //             height: '6vh',
+
+        //             // border line
+        //             borderStyle: 'solid',
+        //             borderColor: 'blue',
+        //             borderWidth: '1px',
+
+        //             // content alignment
+        //             display: 'flex',
+        //             justifyContent: "center",
+        //             alignItems: "center",
+
+        //             // box space control
+        //             // padding: '0px',
+        //             margin: '1px 1px'
+        //         }}
+        //     >{
+        //             keyboxes()
+        //         }
+
+        //     </ButtonGroup>
+        // </div>
     )
 };
 

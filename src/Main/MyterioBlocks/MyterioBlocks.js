@@ -77,9 +77,9 @@ const MysterioBox = (props) => {
                 // gameOver: ((props.row === 7 || state.result.strike === 4) ? true : false )
             })
             message = (state.result.strike === 4 ? `You won the game! The Answer is ${check}!!!` :
-                (props.row === 6 ? `Oh, bad luck this time...The Answer was ${check}...` : `You got ${state.result.strike} S, ${state.result.ball} B !!`))
+                (props.row === 5 ? `Oh, bad luck this time...The Answer was ${check}...` : `You got ${state.result.strike} S, ${state.result.ball} B !!`))
 
-            gameOver = ((props.row === 6 || state.result.strike === 4) ? true : false)
+            gameOver = ((props.row === 5 || state.result.strike === 4) ? true : false)
 
             sendToParent()
             // setState({ msgOn: true })
@@ -94,12 +94,11 @@ const MysterioBox = (props) => {
 
     }
 
-
-    let index = [0, 1, 2, 3, 4, 5, 6];
+    let index = [0, 1, 2, 3, 4, 5]; // , 6, 7, 8
     // console.log(props.row)
     let row = props.row
-
-
+    let height = index.length * 16
+    
     // let BlockRows = index.map((idx) => (
     //     idx === row ?
     //         (<BlockRow value={props.data[row]} key={idx} row={row} />)
@@ -110,60 +109,39 @@ const MysterioBox = (props) => {
         (<BlockRow value={props.data[idx]} key={idx} row={row} fromChild={msgFromChild} />)
     ));
 
-    return (
-        <div
+    return (<>
+        <List
             style={{
-                // box size & space control
-                width: '100%',
-                height: '60%',
-                left: '50%',
-                top: '45%',
-                position: 'absolute',
-                marginTop: '-66%', // half of height
-                marginLeft: '-50%', // half of width
-                // padding: '0px 0px',
+                // this box's width/height
+                width: '100vw',
+                height: '100%',
+
+                // border line
+                // borderStyle: 'solid',
+                // borderColor: 'orange',
+                // borderWidth: '3px',
 
                 // content alignment
-                justifyContent: "center",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
                 alignItems: "center",
-                textAlign: "center",
 
-                // Border Line
-                // border: "solid",
-                // borderColor: 'red',
-                // borderWidth: '1px',
+                // box space control
+                // padding: '0px',
+                // margin: '1px'
             }}
         >
-            <List
-                style={{
-                    // this box's width/height
-                    width: '99vw',
-                    height: '97%',
+            {BlockRows}
 
-                    // border line
-                    // borderStyle: 'solid',
-                    // borderColor: 'blue',
-                    // borderWidth: '1px',
-
-                    // content alignment
-                    display: "inline-block",
-                    justifyContent: "center",
-                    alignItems: "center",
-
-                    // box space control
-                    // padding: '0px',
-                    // margin: '1px'
-                }}
-            >
-                {BlockRows}
-            </List>
-            {/* {<Snackbar
-                open={state.msgOn}
-                message={state.msg}
-                autoHideDuration={1}
-                onClose={snackbarClose}
-            />} */}
-        </div>
+        </List>
+        {/* <Snackbar
+            open={state.msgOn}
+            message={state.msg}
+            autoHideDuration={1}
+            onClose={snackbarClose}
+        /> */}
+    </>
     )
 };
 

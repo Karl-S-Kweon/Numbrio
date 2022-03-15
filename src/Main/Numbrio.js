@@ -1,8 +1,10 @@
+import '../App.css';
 import React, { useEffect, useReducer } from 'react';
 import { Snackbar } from "@material-ui/core";
-import '../App.css';
+import { Box } from '@mui/material/';
 import Keyboards from './Keyboards/Keyboards';
 import MysterioBlocks from './MyterioBlocks/MyterioBlocks';
+import HeaderBar from './Header/HeaderBar'
 
 // An example of a React Functional Component using JSX syntax
 const Numbrio = () => {
@@ -14,7 +16,9 @@ const Numbrio = () => {
             [],
             [],
             [],
-            []
+            // [],
+            // [],
+            // []
         ],
         row: 0,
         msg: '',
@@ -88,19 +92,31 @@ const Numbrio = () => {
 
     // console.log(state.data)
     // send keyboards the input array, to prevent selecting duplicate key value
-    return <>
-
-        <MysterioBlocks data={state.data} row={state.row} message={state.msg} getFromChild={msgFromBlock} />
-        <Keyboards data={state.data} row={state.row} getFromChild={msgFromKey} />
-        {<Snackbar
-            sx={{ height: "50%" }}
-            anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
-            open={state.snackOn}
-            message={state.snack}
-            autoHideDuration={2200}
-            onClose={snackbarClose}
-            // key={'top' + 'center'}
-        />}
-    </>;
+    return (
+        <div
+            className="NumbrioDiv"
+        >
+            <div className="divHeader">
+                <HeaderBar />
+            </div>
+            <div className="divBody">
+                <MysterioBlocks data={state.data} row={state.row} message={state.msg} getFromChild={msgFromBlock} />
+            </div>
+            <div className="divFooter">
+                <Keyboards data={state.data} row={state.row} getFromChild={msgFromKey} />
+            </div>
+            {/* <HeaderBar />
+           
+             */}
+            <Snackbar
+                sx={{ height: "50%" }}
+                anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+                open={state.snackOn}
+                message={state.snack}
+                autoHideDuration={2200}
+                onClose={snackbarClose}
+            />
+        </div>
+    );
 };
 export default Numbrio;
