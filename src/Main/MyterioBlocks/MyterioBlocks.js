@@ -124,9 +124,9 @@ const MysterioBox = (props) => {
                 // content alignment
                 display: "flex",
                 flexDirection: "column",
-                justifyContent: "space-between",
+                justifyContent: "space-around",
                 alignItems: "center",
-
+                
                 // box space control
                 // padding: '0px',
                 margin: '0px'

@@ -55,7 +55,7 @@ const Numbrio = () => {
         }
         setState({ snackOn: false })
     };
-
+    
     const msgFromKey = (msg) => {
         // console.log("before pop: " + state.data)
         if (msg.toString() === 'Enter') {

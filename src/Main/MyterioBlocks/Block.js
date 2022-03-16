@@ -15,18 +15,23 @@ const Block = (props) => {
         <div
             style={{
                 // box Control
-                height: '3rem',
-                width: '3rem',
-                backgroundColor: 'white',
-                                
+                height: '19.5vw',
+                width: '19.5vw', // ${100/5}
+                // backgroundColor: 'white',
+
                 // Border Line
-                borderStyle: 'solid',
-                borderColor: props.css[0],
-                borderRadius: '50%',
-                borderWidth: '2px',
+                // borderStyle: 'solid',
+                // borderColor: 'black',
+                // borderWidth: '1px',
+                // // borderRadius: '50%',
+
+                //
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
 
                 // 
-                margin: '0px 0.5rem',
+                // margin: '0px 0.3rem',
 
                 // animations
                 animationName: props.css[1],
@@ -36,17 +41,41 @@ const Block = (props) => {
             }}
         >
             <div
-                className="blockFont"
                 style={{
-                    display: 'flex',
+                    // box Control
+                    height: '75%',
+                    width: '75%',
+                    backgroundColor: 'white',
+
+                    // Border Line
+                    borderStyle: 'solid',
+                    borderColor: props.css[0],
+                    borderRadius: '50%',
+                    borderWidth: '2px',
+
+                    // 
+                    // margin: '0px 0.5rem',
+
                     // animations
                     animationName: props.css[1],
-
+                    /*animation-fill-mode: both;*/
+                    animationDuration: '0.1s',
+                    animationIterationCount: 'initial',
                 }}
-
-            // onClick={senKeyData}
             >
-                {props.value}
+                <div
+                    className="blockFont"
+                    style={{
+                        display: 'flex',
+                        // animations
+                        animationName: props.css[1],
+
+                    }}
+
+                // onClick={senKeyData}
+                >
+                    {props.value}
+                </div>
             </div>
         </div>
     )
