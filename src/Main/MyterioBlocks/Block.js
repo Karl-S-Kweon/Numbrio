@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 const Block = (props) => {
 
     useEffect(() => {
-        sendKeyData()
+        // sendKeyData()
     })
 
     const sendKeyData = () => {
@@ -12,23 +12,21 @@ const Block = (props) => {
     };
 
     return (
-        // <div  className="divBox">{props.value}</div>
         <div
             style={{
                 // box Control
-                height: '4rem',
-                width: '4rem',
+                height: '3rem',
+                width: '3rem',
                 backgroundColor: 'white',
-
+                                
                 // Border Line
                 borderStyle: 'solid',
                 borderColor: props.css[0],
                 borderRadius: '50%',
                 borderWidth: '2px',
 
-
                 // 
-                margin: '0px 7px',
+                margin: '0px 0.5rem',
 
                 // animations
                 animationName: props.css[1],

@@ -47,7 +47,7 @@
 
 .NumbrioDiv {
   width: 100vw;
-  height: 100vh;
+  height: 90.6vh;
   overflow: hidden;
   
   /* border-style: solid;
@@ -64,30 +64,32 @@
 
 .divHeader {
   width: 100vw;
-  height: 10vh;
+  height: 7.6vh;
 
   /* border-style: solid; */
   /* border-color: purple; */
   /* border-width: 1px; */
-  /* border-radius: 0%; */
-  
+  border-radius: 4%;
+  border-bottom: 1px solid darkgrey;
+
   /* display: flex;
   flex-direction: column; */
   flex-shrink: 0;
 
-  margin-top: 10%;
+  margin-top: 0%;
 }
 
 .divBody {
   width: 100vw;
-  height: 70vh;
+  height: 69vh;
 
   /* border-style: solid;
   border-color: red;
   border-width: 1px;
   border-radius: 0%; */
 
-  overflow-y: auto;
+  overflow-y: hidden;
+  overflow-x: hidden;
   /* display: "flex";
   flex-direction: "column";
   flex-shrink: 0;
@@ -98,16 +100,20 @@
 
 .divFooter {
   width: 100vw;
-  height: 15vh;
+  height: 14vh;
 
   /* border-style: solid;
   border-color: purple;
-  border-width: 1px;
-  border-radius: 0%; */
+  border-width: 1px;*/
+  border-radius: 3%; 
+  border-top: solid 1px darkgrey;
+  
   
   /* display: "flex";
   flex-direction: "column"; */
   flex-shrink: 0;
+  
+  margin-top: 0.5rem;
 }
 
 /* 

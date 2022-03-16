@@ -14,11 +14,11 @@ const Key = (props) => {
     var width;
     // console.log(props.length)
     if (typeof (props.value) === typeof (1)) {
-        width = '50px'
+        width = '51px'
         // console.log(width)        
     }
     else {
-        width = '75px';
+        width = '77px';
     }
     // console.log("Key - render")
     return (
@@ -30,8 +30,8 @@ const Key = (props) => {
             style={{
                 maxWidth: `${width}`, //'55px',
                 minWidth: '5%',
-                width: '60%',
-                height: '90%',
+                width: '62%',
+                height: '92%',
                 // width: '1%', // `${width}vw`,
                 backgroundColor: props.pointer[1],
 
@@ -42,7 +42,7 @@ const Key = (props) => {
                 borderWidth: '1px',
                 
                 // 
-                margin: '0px 2px',
+                margin: '0px 0.5%',
 
                 //
                 pointerEvents: props.pointer[0],

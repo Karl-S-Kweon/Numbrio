@@ -8,11 +8,16 @@ const HeaderBar = (props) => {
             style={{
                 width: '100vw',
                 height: '100%',
-                borderStyle: 'solid',
-                borderWidth: '1px',
-                borderColor: 'pink'
+                
+                
+                // borderStyle: 'solid',
+                // borderWidth: '1px',
+                // borderColor: 'pink'
             }}
-        ></div>
+        >
+
+            
+        </div>
     )
 };
 export default HeaderBar;

@@ -117,7 +117,7 @@ const KeyRow = (props) => {
             style={{
                 // this box's width/height
                 width: '100vw',
-                height: '48%',
+                height: '50%',
 
                 // border line
                 // borderStyle: 'solid',
@@ -131,7 +131,7 @@ const KeyRow = (props) => {
 
                 // box space control
                 // padding: '0px',
-                margin: '0.5px'
+                // margin: '0.5px'
             }}
         >{
                 keyboxes()
