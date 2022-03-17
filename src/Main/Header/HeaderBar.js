@@ -61,7 +61,6 @@ const HeaderBar = (props) => {
 
             </div>
             <div
-                className="blockFont"
                 style={{
                     width: '50vw',
                     display: 'flex',
