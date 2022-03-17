@@ -325,7 +325,7 @@ https://stackoverflow.com/questions/50380360/pure-css-zoom-animation-based-on-ti
   40% {
     -webkit-transform: scale3d(1.23, 1.23, 1.23);
     transform: scale3d(1.23, 1.23, 1.23);
-    opacity: 75%;
+    opacity: 100;
   }
   50% {
     -webkit-transform: scale3d(1.25, 1.25, 1.25);
@@ -335,7 +335,7 @@ https://stackoverflow.com/questions/50380360/pure-css-zoom-animation-based-on-ti
   60% {
     -webkit-transform: scale3d(1.15, 1.15, 1.15);
     transform: scale3d(1.15, 1.15, 1.15);
-    opacity: 95%;
+    opacity: 100%;
   }
   70% {
     -webkit-transform: scale3d(1.1, 1.1, 1.1);
@@ -450,7 +450,7 @@ https://stackoverflow.com/questions/50380360/pure-css-zoom-animation-based-on-ti
   40% {
     -webkit-transform: scale3d(1.23, 1.23, 1.23);
     transform: scale3d(1.23, 1.23, 1.23);
-    opacity: 75%;
+    opacity: 100%;
   }
   50% {
     -webkit-transform: scale3d(1.25, 1.25, 1.25);
@@ -460,7 +460,7 @@ https://stackoverflow.com/questions/50380360/pure-css-zoom-animation-based-on-ti
   60% {
     -webkit-transform: scale3d(1.15, 1.15, 1.15);
     transform: scale3d(1.15, 1.15, 1.15);
-    opacity: 90%;
+    opacity: 100;
   }
   70% {
     -webkit-transform: scale3d(1.1, 1.1, 1.1);

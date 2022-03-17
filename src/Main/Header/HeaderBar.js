@@ -1,6 +1,9 @@
 import '../../App.css';
 import React from 'react';
 import { Button } from "@mui/material/";
+import graph from './Asset/Graph.png'
+import baseball from './Asset/Baseball.png'
+
 const HeaderBar = (props) => {
 
     return (
@@ -55,7 +58,7 @@ const HeaderBar = (props) => {
                     }}
                 >
                     <img
-                        src="/asset/graph.png" width="35vw" height="35vw"
+                        src={graph} width="35vw" height="35vw"
                     />
                 </Button>
 
@@ -123,7 +126,7 @@ const HeaderBar = (props) => {
                         }}
                     >?</span> */}
                     <img
-                        src="/asset/baseball.png" width="35vw" height="35vh"
+                        src={baseball} width="35vw" height="35vh"
                     />
                 </Button>
             </div>
