@@ -23,9 +23,9 @@ const Key = (props) => {
     // console.log("Key - render")
     return (
         <Button
-            size='small'
+            // size='small'
             // color={'black'}
-            variant='contained'
+            // variant='contained'
             onClick={sendKeyData}
             style={{
                 maxWidth: `${width}`, //'55px',
@@ -40,7 +40,7 @@ const Key = (props) => {
                 borderColor: 'darkgrey', // props.pointer[1],
                 borderRadius: '8%',
                 borderWidth: '1px',
-                
+
                 // 
                 margin: '0px 0.5%',
 
@@ -56,7 +56,13 @@ const Key = (props) => {
 
             }}
         >
-            <div className="keyFont">
+            <div
+                className="keyFont"
+                style={{
+                    animationName: 'inherit',
+                    animationDuration: '0.2s',
+                    animationIterationCount: 'initial',
+                }}>
                 {props.value}
             </div>
         </Button >

@@ -49,7 +49,7 @@
   width: 100vw;
   height: 90.6vh;
   overflow: hidden;
-  
+
   /* border-style: solid;
   border-color: blue;
   border-width: 1px;
@@ -62,6 +62,31 @@
   margin: 0px;
 }
 
+.reload {
+  flex-shrink: 0;
+  z-index: 1;
+
+  background-color: "black";
+
+  position: absolute;
+
+  top: 62vh;
+  left: 79%;
+
+  /* To keep square */
+  /* max-width: 125vw;
+  max-height: 125vh; */
+  width: 17vw;
+  height: 19vh;
+
+  /* border: 1px red solid; */
+  border-radius: 50%;
+
+  display: "flex";
+  justify-content: "center";
+  align-items: "center";
+}
+
 .divHeader {
   width: 100vw;
   height: 7.6vh;
@@ -72,8 +97,8 @@
   border-radius: 4%;
   border-bottom: 1px solid darkgrey;
 
-  /* display: flex;
-  flex-direction: column; */
+  display: flex;
+  flex-direction: column;
   flex-shrink: 0;
 
   margin-top: 0%;
@@ -88,14 +113,16 @@
   border-width: 1px;
   border-radius: 0%; */
 
-  overflow-y: auto;
+  overflow-y: hidden;
   overflow-x: hidden;
   /* display: "flex";
   flex-direction: "column";
   flex-shrink: 0;
   
+  
   justify-content: "flex-start";
   align-items: "center"; */
+  /* z-index: 1; */
 }
 
 .divFooter {
@@ -105,14 +132,13 @@
   /* border-style: solid;
   border-color: purple;
   border-width: 1px;*/
-  border-radius: 3%; 
+  border-radius: 3%;
   border-top: solid 1px darkgrey;
-  
-  
+
   /* display: "flex";
   flex-direction: "column"; */
   flex-shrink: 0;
-  
+
   margin-top: 0.5rem;
 }
 
@@ -160,9 +186,9 @@
   display: flex;
 
   color: darkgrey;
-  font-size: small;
+  font-size: medium;
   font-weight: bold;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   text-align: center;
 
@@ -171,9 +197,9 @@
   border-color: white;
   border-width: 1px;   
     */
-
+  /* 
   animation-duration: "0.2s";
-  animation-iteration-count: "initial";
+  animation-iteration-count: "initial"; */
 }
 
 .blockFont {
@@ -219,10 +245,6 @@ https://stackoverflow.com/questions/50380360/pure-css-zoom-animation-based-on-ti
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
   }
-  to {
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
-  }
 }
 
 @keyframes pulse {
@@ -245,5 +267,251 @@ https://stackoverflow.com/questions/50380360/pure-css-zoom-animation-based-on-ti
   to {
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
+  }
+}
+
+/* */
+@-webkit-keyframes breath {
+  1% {
+    -webkit-transform: scale3d(1.005, 1.005, 1.005);
+    transform: scale3d(1.005, 1.005, 1.005);
+    opacity: 0.05%;
+  }
+  2% {
+    -webkit-transform: scale3d(1.01, 1.01, 1.01);
+    transform: scale3d(1.01, 1.01, 1.01);
+    opacity: 0.5%;
+  }
+  3% {
+    -webkit-transform: scale3d(1.015, 1.015, 1.015);
+    transform: scale3d(1.015, 1.015, 1.015);
+    opacity: 1%;
+  }
+  4% {
+    -webkit-transform: scale3d(1.02, 1.02, 1.02);
+    transform: scale3d(1.02, 1.02, 1.02);
+    opacity: 2%;
+  }
+  5% {
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
+    opacity: 3%;
+  }
+  6% {
+    -webkit-transform: scale3d(1.04, 1.04, 1.04);
+    transform: scale3d(1.04, 1.04, 1.04);
+    opacity: 4%;
+  }
+  7% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+    opacity: 5%;
+  }
+  10% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+    opacity: 15%;
+  }
+  20% {
+    -webkit-transform: scale3d(1.15, 1.15, 1.15);
+    transform: scale3d(1.15, 1.15, 1.15);
+    opacity: 21%;
+  }
+  30% {
+    -webkit-transform: scale3d(1.2, 1.2, 1.2);
+    transform: scale3d(1.2, 1.2, 1.2);
+    opacity: 43%;
+  }
+  40% {
+    -webkit-transform: scale3d(1.23, 1.23, 1.23);
+    transform: scale3d(1.23, 1.23, 1.23);
+    opacity: 75%;
+  }
+  50% {
+    -webkit-transform: scale3d(1.25, 1.25, 1.25);
+    transform: scale3d(1.25, 1.25, 1.25);
+    opacity: 100%;
+  }
+  60% {
+    -webkit-transform: scale3d(1.15, 1.15, 1.15);
+    transform: scale3d(1.15, 1.15, 1.15);
+    opacity: 95%;
+  }
+  70% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+    opacity: 85%;
+  }
+  80% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+    opacity: 70%;
+  }
+  90% {
+    -webkit-transform: scale3d(1.04, 1.04, 1.04);
+    transform: scale3d(1.04, 1.04, 1.04);
+    opacity: 55%;
+  }
+  95% {
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
+    opacity: 20%;
+  }
+
+  96% {
+    -webkit-transform: scale3d(1.02, 1.02, 1.02);
+    transform: scale3d(1.02, 1.02, 1.02);
+    opacity: 5%;
+  }
+
+  97% {
+    -webkit-transform: scale3d(1.015, 1.015, 1.015);
+    transform: scale3d(1.015, 1.015, 1.015);
+    opacity: 4%;
+  }
+  98% {
+    -webkit-transform: scale3d(1.01, 1.01, 1.01);
+    transform: scale3d(1.01, 1.01, 1.01);
+    opacity: 3%;
+  }
+  99% {
+    -webkit-transform: scale3d(1.008, 1.008, 1.008);
+    transform: scale3d(1.008, 1.008, 1.008);
+    opacity: 2%;
+  }
+  100% {
+    -webkit-transform: scale3d(1.005, 1.005, 1.005);
+    transform: scale3d(1.005, 1.005, 1.005);
+    opacity: 0%;
+  }
+  to {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    opacity: 0%;
+  }
+}
+
+@keyframes breath {
+  0% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    opacity: 1%;
+  }
+  1% {
+    -webkit-transform: scale3d(1.005, 1.005, 1.005);
+    transform: scale3d(1.005, 1.005, 1.005);
+    opacity: 2%;
+  }
+  2% {
+    -webkit-transform: scale3d(1.01, 1.01, 1.01);
+    transform: scale3d(1.01, 1.01, 1.01);
+    opacity: 3%;
+  }
+  3% {
+    -webkit-transform: scale3d(1.015, 1.015, 1.015);
+    transform: scale3d(1.015, 1.015, 1.015);
+    opacity: 4%;
+  }
+  4% {
+    -webkit-transform: scale3d(1.02, 1.02, 1.02);
+    transform: scale3d(1.02, 1.02, 1.02);
+    opacity: 5%;
+  }
+  5% {
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
+    opacity: 6%;
+  }
+  6% {
+    -webkit-transform: scale3d(1.04, 1.04, 1.04);
+    transform: scale3d(1.04, 1.04, 1.04);
+    opacity: 9%;
+  }
+  7% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+    opacity: 15%;
+  }
+  10% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+    opacity: 30%;
+  }
+  20% {
+    -webkit-transform: scale3d(1.15, 1.15, 1.15);
+    transform: scale3d(1.15, 1.15, 1.15);
+    opacity: 50%;
+  }
+  30% {
+    -webkit-transform: scale3d(1.2, 1.2, 1.2);
+    transform: scale3d(1.2, 1.2, 1.2);
+    opacity: 75%;
+  }
+  40% {
+    -webkit-transform: scale3d(1.23, 1.23, 1.23);
+    transform: scale3d(1.23, 1.23, 1.23);
+    opacity: 75%;
+  }
+  50% {
+    -webkit-transform: scale3d(1.25, 1.25, 1.25);
+    transform: scale3d(1.25, 1.25, 1.25);
+    opacity: 100%;
+  }
+  60% {
+    -webkit-transform: scale3d(1.15, 1.15, 1.15);
+    transform: scale3d(1.15, 1.15, 1.15);
+    opacity: 90%;
+  }
+  70% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+    opacity: 80%;
+  }
+  80% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+    opacity: 65%;
+  }
+  90% {
+    -webkit-transform: scale3d(1.04, 1.04, 1.04);
+    transform: scale3d(1.04, 1.04, 1.04);
+    opacity: 45%;
+  }
+  95% {
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
+    opacity: 25%;
+  }
+
+  96% {
+    -webkit-transform: scale3d(1.02, 1.02, 1.02);
+    transform: scale3d(1.02, 1.02, 1.02);
+    opacity: 10%;
+  }
+
+  97% {
+    -webkit-transform: scale3d(1.015, 1.015, 1.015);
+    transform: scale3d(1.015, 1.015, 1.015);
+    opacity: 4%;
+  }
+  98% {
+    -webkit-transform: scale3d(1.01, 1.01, 1.01);
+    transform: scale3d(1.01, 1.01, 1.01);
+    opacity: 3%;
+  }
+  99% {
+    -webkit-transform: scale3d(1.008, 1.008, 1.008);
+    transform: scale3d(1.008, 1.008, 1.008);
+    opacity: 2%;
+  }
+  100% {
+    -webkit-transform: scale3d(1.005, 1.005, 1.005);
+    transform: scale3d(1.005, 1.005, 1.005);
+    opacity: 1%;
+  }
+  to {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    opacity: 0%;
   }
 }

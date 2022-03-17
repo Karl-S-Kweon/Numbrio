@@ -15,15 +15,15 @@ const Block = (props) => {
         <div
             style={{
                 // box Control
-                height: '19.5vw',
-                width: '19.5vw', // ${100/5}
+                height: '18.5vw',
+                width: '18.5vw', // ${100/5}
                 // backgroundColor: 'white',
 
                 // Border Line
                 // borderStyle: 'solid',
                 // borderColor: 'black',
                 // borderWidth: '1px',
-                // // borderRadius: '50%',
+                // borderRadius: '50%',
 
                 //
                 display: "flex",
@@ -31,7 +31,7 @@ const Block = (props) => {
                 alignItems: "center",
 
                 // 
-                // margin: '0px 0.3rem',
+                margin: '-0.1rem',
 
                 // animations
                 animationName: props.css[1],
@@ -43,8 +43,8 @@ const Block = (props) => {
             <div
                 style={{
                     // box Control
-                    height: '75%',
-                    width: '75%',
+                    height: '72.5%',
+                    width: '72.5%',
                     backgroundColor: 'white',
 
                     // Border Line

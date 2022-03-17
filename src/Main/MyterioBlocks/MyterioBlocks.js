@@ -1,6 +1,6 @@
 import '../../App.css';
 import React, { useReducer, useEffect } from 'react';
-import { List } from "@material-ui/core";
+import { List } from "@mui/material/";
 import BlockRow from './BlockRow'
 import Answer from '../Answer/AnswerKey'
 // import { Snackbar } from "@material-ui/core";
@@ -126,7 +126,7 @@ const MysterioBox = (props) => {
                 flexDirection: "column",
                 justifyContent: "space-around",
                 alignItems: "center",
-                
+
                 // box space control
                 // padding: '0px',
                 margin: '0px'

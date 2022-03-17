@@ -1,10 +1,11 @@
 import '../App.css';
 import React, { useEffect, useReducer } from 'react';
-import { Snackbar } from "@material-ui/core";
-import { Box } from '@mui/material/';
+import { Snackbar } from "@mui/material/";
+import { Box, Button } from '@mui/material/';
 import Keyboards from './Keyboards/Keyboards';
 import MysterioBlocks from './MyterioBlocks/MyterioBlocks';
 import HeaderBar from './Header/HeaderBar'
+import { fontFamily } from '@mui/system';
 
 // An example of a React Functional Component using JSX syntax
 const Numbrio = () => {
@@ -55,7 +56,7 @@ const Numbrio = () => {
         }
         setState({ snackOn: false })
     };
-    
+
     const msgFromKey = (msg) => {
         // console.log("before pop: " + state.data)
         if (msg.toString() === 'Enter') {
@@ -89,34 +90,77 @@ const Numbrio = () => {
         setState({ data: state.data, row: state.row })
         // msgFromBlock()
     };
-
-    // console.log(state.data)
-    // send keyboards the input array, to prevent selecting duplicate key value
-    return (
-        <div
-            className="NumbrioDiv"
+    
+    let reset = (
+        <Button
+            style={{
+                zIndex: 0,
+                // border: 'blue 1px solid',
+                borderRadius: '50%',
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                backgroundColor: 'crimson',
+                animationName: 'breath',
+                animationDuration: '1.7s',
+                animationIterationCount: 'infinite',
+            }}
+        // onClick={{}}
         >
-            <div className="divHeader">
-                <HeaderBar />
-            </div>
-            <div className="divBody">
-                <MysterioBlocks data={state.data} row={state.row} message={state.msg} getFromChild={msgFromBlock} />
-            </div>
-            <div className="divFooter">
-                <Keyboards data={state.data} row={state.row} getFromChild={msgFromKey} />
-            </div>
-            {/* <HeaderBar />
-           
-             */}
-            <Snackbar
-                sx={{ height: "50%" }}
-                anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
-                open={state.snackOn}
-                message={state.snack}
-                autoHideDuration={2200}
-                onClose={snackbarClose}
-            />
-        </div>
+            <div
+                className="blockFont"
+                style={{
+                    width: '100%',
+                    height: '100%',
+                    color: 'white',
+
+                    backgroundColor: 'royalblue',
+
+                    borderStyle: 'solid',
+                    borderColor: 'white',
+                    borderWidth: '3px',
+                    borderRadius: '50%',
+
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    fontFamily: 'Unicode Lucida Sans-Serif',
+                    // fontFamily: 'Lucida',
+                    // fontFamily: '',
+        }}
+    >&#x21bb;</div>
+        </Button >
     );
+
+// console.log(state.data)
+// send keyboards the input array, to prevent selecting duplicate key value
+return (
+    <div
+        className="NumbrioDiv"
+    >
+        <div className='reload'>
+            {state.gameOver && reset}
+            {/* {reset} */}
+        </div>
+        <div className="divHeader">
+            <HeaderBar />
+        </div>
+        <div className="divBody">
+            <MysterioBlocks data={state.data} row={state.row} message={state.msg} getFromChild={msgFromBlock} />
+        </div>
+        <div className="divFooter">
+            <Keyboards data={state.data} row={state.row} getFromChild={msgFromKey} />
+        </div>
+
+        <Snackbar
+            sx={{ height: "50%" }}
+            anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+            open={state.snackOn}
+            message={state.snack}
+            autoHideDuration={2200}
+            onClose={snackbarClose}
+        />
+    </div>
+);
 };
 export default Numbrio;
