@@ -30,68 +30,69 @@ const MysterioBox = (props) => {
         // console.log('%cAnswer: ' + Answer, color)
         // console.log(props.data[props.row].length)
         // console.log('Key input: ' + props.message)
-        getTrialResult()
+        // getTrialResult()
     })
     let message = ''
     let gameOver = false
-    const getTrialResult = () => {
-        let check = Answer
+    // console.log(props.message)
 
+    // const getTrialResult = () => {
+    //     let check = Answer
 
-        if (props.data[props.row].length === 4 && props.message === 'Enter') {
-            // console.log('Check begins')
-            let i = 0
-            check.map((idx) => {
+    //     if (props.data[props.row].length === 4 && props.message === 'Enter') {
+    //         // console.log('Check begins')
+    //         let i = 0
+    //         check.map((idx) => {
 
-                if (idx === props.data[props.row][i]) {
-                    setState({
-                        result: {
-                            strike: ++state.result.strike,
-                            // ball: state.result.ball
-                        },
-                        // msg: `Result: ${state.result.strike} S, ${state.result.ball} B!`
-                    });
-                }
-                else if (Answer.includes(props.data[props.row][i])) {
-                    setState({
-                        result: {
-                            // strike: state.result.strike,
-                            ball: ++state.result.ball
-                        },
-                        // msg: `Result: ${state.result.strike} S, ${state.result.ball} B!`
-                    });
-                }
-                i++;
-                return true
-            })
-            // console.log(`Result: ${state.result.strike} S, ${state.result.ball} B!`)
-            // state.msgOn = true
-            setState({
-                result: {
-                    strike: 0,
-                    ball: 0
-                },
-                msgOn: true,
-                // msg: ( state.result.strike === 4 ? `You won this game! The Answer is ${check}!!!` : 
-                // (props.row === 7 ? `Oh, bad luck this time! The Answer is ${check}...` : `You got ${state.result.strike} S, ${state.result.ball} B !!`)),
-                // gameOver: ((props.row === 7 || state.result.strike === 4) ? true : false )
-            })
-            message = (state.result.strike === 4 ? `You won the game! The Answer is ${check}!!!` :
-                (props.row === 5 ? `Oh, bad luck this time...The Answer was ${check}...` : `You got ${state.result.strike} S, ${state.result.ball} B !!`))
+    //             if (idx === props.data[props.row][i]) {
+    //                 setState({
+    //                     result: {
+    //                         strike: ++state.result.strike,
+    //                         // ball: state.result.ball
+    //                     },
+    //                     // msg: `Result: ${state.result.strike} S, ${state.result.ball} B!`
+    //                 }); 
+    //             }
+    //             else if (Answer.includes(props.data[props.row][i])) {
+    //                 setState({
+    //                     result: {
+    //                         // strike: state.result.strike,
+    //                         ball: ++state.result.ball
+    //                     },
+    //                     // msg: `Result: ${state.result.strike} S, ${state.result.ball} B!`
+    //                 });
+    //             }
+    //             i++;
+    //             return true
+    //         })
+    //         // console.log(`Result: ${state.result.strike} S, ${state.result.ball} B!`)
+    //         // state.msgOn = true
+    //         setState({
+    //             result: {
+    //                 strike: 0,
+    //                 ball: 0
+    //             },
+    //             msgOn: true,
+    //             // msg: ( state.result.strike === 4 ? `You won this game! The Answer is ${check}!!!` : 
+    //             // (props.row === 7 ? `Oh, bad luck this time! The Answer is ${check}...` : `You got ${state.result.strike} S, ${state.result.ball} B !!`)),
+    //             // gameOver: ((props.row === 7 || state.result.strike === 4) ? true : false )
+    //         })
+    //         message = (state.result.strike === 4 ? `You won the game! The Answer is ${check}!!!` :
+    //             (props.row === 5 ? `Oh, bad luck this time...The Answer was ${check}...` : `You got ${state.result.strike} S, ${state.result.ball} B !!`))
 
-            gameOver = ((props.row === 5 || state.result.strike === 4) ? true : false)
+    //         gameOver = ((props.row === 5 || state.result.strike === 4) ? true : false)
 
-            sendToParent()
-            // setState({ msgOn: true })
-        }
-    }
+    //         sendToParent()
+    //         // setState({ msgOn: true })
+    //     }
+    // }
 
-    const sendToParent = () => {
-        props.getFromChild([message, gameOver])
+    const sendToParent = (msg) => {
+        props.getFromChild([msg[0], msg[1]])
     }
 
     const msgFromChild = (msg) => {
-
+        sendToParent(msg)
     }
 
     let index = [0, 1, 2, 3, 4, 5]; // , 6, 7, 8
@@ -106,7 +107,7 @@ const MysterioBox = (props) => {
     // ));
     // console.log(Answer)    
     let BlockRows = index.map((idx) => (
-        (<BlockRow value={props.data[idx]} key={idx} row={row} marginBtm={idx===5? '0.3rem' : '0'} fromChild={msgFromChild} />)
+        (<BlockRow data={props.data[idx]} key={idx} row={row} message={props.message} marginBtm={idx===5? '0.3rem' : '0'} getFromChild={msgFromChild} />)
     ));
 
     return (<>
@@ -114,7 +115,7 @@ const MysterioBox = (props) => {
             style={{
                 // this box's width/height
                 width: '100vw',
-                height: '100%',
+                height: '69vh',
 
                 // border line
                 // borderStyle: 'solid',
@@ -124,7 +125,7 @@ const MysterioBox = (props) => {
                 // content alignment
                 display: "flex",
                 flexDirection: "column",
-                justifyContent: "space-around",
+                justifyContent: "space-evenly",
                 alignItems: "center",
 
                 // box space control

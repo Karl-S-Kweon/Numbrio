@@ -14,7 +14,7 @@ const Keyboards = (props) => {
         // console.log("keyboards, sendKeyData")
         props.getFromChild(msg);
     };
-
+    
     const msgFromChild = (msg) => {
         // console.log("keyboards, msgFromChild")
         // setState({ data: msg });

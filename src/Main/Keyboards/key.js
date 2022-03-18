@@ -43,7 +43,7 @@ const Key = (props) => {
 
                 // 
                 margin: '0px 0.5%',
-
+                
                 //
                 pointerEvents: props.pointer[0],
 
@@ -54,102 +54,23 @@ const Key = (props) => {
                 animationDuration: '0.2s',
                 animationIterationCount: 'initial',
 
+                zIndex: 1,
+
             }}
         >
             <div
                 className="keyFont"
-                style={{
-                    animationName: 'inherit',
-                    animationDuration: '0.2s',
-                    animationIterationCount: 'initial',
-                }}>
+                // style={{
+                //     width: '10vw',
+                //     borderStyle: 'solid',
+                //     borderColor: 'black', // props.pointer[1],
+                //     borderRadius: '8%',
+                //     borderWidth: '1px',
+                // }}
+            >
                 {props.value}
             </div>
         </Button >
-        // <div
-        //     sx={{
-        //         border: 1,
-        //         borderColor: 'grey',
-        //     }}
-        //     style={{
-        //         height: '100%',
-        //         width: '4rem', // `${width}vw`,
-        //         backgroundColor: props.pointer[1],
-
-        //         // Border Line
-        //         borderStyle: 'solid',
-        //         borderColor: 'dimgrey', // props.pointer[1],
-        //         borderRadius: '9%',
-        //         borderWidth: '1px',
-
-        //         // 
-        //         margin: '0px 3px',
-
-        //         //
-        //         pointerEvents: props.pointer[0],
-
-        //         // animations
-        //         // animationName: props.pointer[2],
-        //         animationName: props.animation,
-        //         /*animation-fill-mode: both;*/
-        //         animationDuration: '0.2s',
-        //         animationIterationCount: 'initial',
-
-        //     }}
-        // >
-        //     <Button
-        //         onClick={sendKeyData}
-        //     >
-        //         <div className="keyFont"> 
-        //             {props.value}
-        //         </div>
-        //     </Button>
-        // </div>
-        // <div
-        //     style={{
-        //         height: '100%',
-        //         width: '100%', // `${width}vw`,
-        //         // backgroundColor: props.pointer[1],
-
-        //          // Border Line
-        //         //  borderStyle: 'solid',
-        //         //  borderColor: props.pointer[1],
-        //         //  borderRadius: '8%',
-        //         //  borderWidth: '1px',
-
-        //         // 
-        //         margin: '0px 0px',
-
-        //         //
-        //         pointerEvents: props.pointer[0],
-
-        //         // animations
-        //         // animationName: props.pointer[2],
-        //         animationName: props.animation,
-        //         /*animation-fill-mode: both;*/
-        //         animationDuration: '0.2s',
-        //         animationIterationCount: 'initial',
-        //     }}
-        // // onClick={senKeyData}
-
-        // >
-        //     <Button
-        //         style={{
-        //             backgroundColor: props.pointer[1],
-
-        //             // Border Line
-        //             borderStyle: 'solid',
-        //             borderRadius: '7%',
-        //             borderWidth: '1px',
-        //             borderColor: 'yellow',
-        //         }}
-        //         className="keyFont"
-        //         onClick={sendKeyData}
-        //     >
-        //         {props.value}
-        //     </Button>
-        //     {/* {props.value} */}
-        // </div>
     )
 };
 export default Key;

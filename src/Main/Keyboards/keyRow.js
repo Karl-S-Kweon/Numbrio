@@ -64,8 +64,9 @@ const KeyRow = (props) => {
 
     let index = props.keyRange;
     let length = (index.length);
+    
     let row = props.row !== undefined ? props.row : 0
-    // console.log(row)
+    // console.log(length)
     // animation 을 스테이트로 받고, 그걸 셋 스테이트로 변경해보기 -> 효과 없음
     // 2/ // animation = { length > 0 ? 'pulse' : ''}
     let keyboxes = () => {

@@ -1,6 +1,6 @@
 import '../../App.css';
 import React from 'react';
-import { Button } from "@mui/material/";
+import { Button, Avatar } from "@mui/material/";
 import graph from './Asset/Graph.png'
 import baseball from './Asset/Baseball.png'
 
@@ -19,9 +19,7 @@ const HeaderBar = (props) => {
                 textAlign: 'center',
                 // zIndex: 'auto',
 
-                // borderStyle: 'solid',
-                // borderWidth: '1px',
-                // borderColor: 'pink'
+                // border: 'solid 1px red',
             }}
         >
             <div
@@ -40,25 +38,27 @@ const HeaderBar = (props) => {
             >
                 <Button
                     style={{
-                        width: '13vw',
-                        height: '90%',
+                        minWidth: '0rem',
+                        maxWidth: '3.3rem',
+                        minHeight: '0rem',
+                        maxHeight: '3rem',
+                        width: '100%',
+                        height: '100%',
                         // backgroundColor: 'white',
                         // border: '3px solid',
                         // borderRadius: '50%',
-                        // display: 'flex',
-                        // justifyContent: "center",
-                        // alignItems: "center",
+                        display: 'flex',
+                        justifyContent: "center",
+                        alignItems: "center",
                         // textAlign: 'center',
-
-                        // 
-                        // alignItems: "center",
-                        // textAlign: 'center',
-                        // alignSelf:'center'
+                        // paddingTop: '0.5rem',
+                        marginBottom: '-4%',
                         // zIndex: -5,
                     }}
+
                 >
                     <img
-                        src={graph} width="35vw" height="35vw"
+                        src={graph} width="100%" height="100%"
                     />
                 </Button>
 
@@ -66,13 +66,41 @@ const HeaderBar = (props) => {
             <div
                 style={{
                     width: '50vw',
+                    height: '100%',
                     display: 'flex',
                     justifyContent: "center",
                     alignItems: "center",
                     textAlign: 'center',
+                    // border: 'solid 1px red',
                 }}
             >
-                Numbrio
+                <div
+                    className='blockFont'
+
+                    style={{
+                        color: 'royalblue',
+                        display: 'flex',
+                        justifyContent: "center",
+                        alignItems: "center",
+                        textAlign: 'center',
+                        // border: 'solid 1px red',
+                    }}
+                >Numbrio
+                    {/* <div
+                        style={{
+                            height: '100%',
+                            fontSize: '0.5rem',
+                            color: 'indigo',
+                            display: 'flex',
+                            justifyContent: "space-between",
+                            alignItems: "flex-start",
+                            textAlign: 'flex-start',
+                            border: 'solid 1px red',
+                        }}
+                    >
+                        TM
+                    </div> */}
+                </div>
             </div>
             <div
                 style={{
@@ -88,46 +116,38 @@ const HeaderBar = (props) => {
                 }}
             >
                 <Button
+                    id="baseball"
                     style={{
-                        width: '13vw',
-                        height: '90%',
-                        backgroundColor: 'white',
-                        // border: '3px solid',
+                        minWidth: '0rem',
+                        maxWidth: '2.5rem',
+                        minHeight: '0rem',
+                        maxHeight: '2.5rem',
+                        width: '50%',
+                        height: '100%',
+                        // border: '1px solid red',
                         borderRadius: '50%',
                         // display: 'flex',
                         // justifyContent: "center",
                         // alignItems: "center",
                         // textAlign: 'center',
 
-                        // 
-                        // alignItems: "center",
-                        // textAlign: 'center',
-                        // alignSelf:'center'
                         // zIndex: -5,
                     }}
-                >
-                    {/* <span
-                        className="blockFont"
+                    startIcon={<Avatar
+                        src={baseball}
                         style={{
-                            width: '100%',
-                            height: '80%',
-                            backgroundColor: 'white',
-                            border: '3px royalblue solid',
-                            borderRadius: '50%',
-
-                            // Border Line
-                            // border: '3px black solid',
-                            // borderRadius: '50%', 
-                            color: 'royalblue',
-                            display: 'flex',
+                            // border: '1px solid blue',
+                            // display: 'flex',
                             // justifyContent: "center",
                             // alignItems: "center",
                             // textAlign: 'center',
+                            marginLeft: '15%'
                         }}
-                    >?</span> */}
-                    <img
+                    />}
+                >
+                    {/* <img
                         src={baseball} width="35vw" height="35vh"
-                    />
+                    /> */}
                 </Button>
             </div>
         </div >

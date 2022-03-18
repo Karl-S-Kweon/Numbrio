@@ -8,17 +8,17 @@ const Block = (props) => {
     })
 
     const sendKeyData = () => {
-        props.fromChild('');
+        // props.fromChild('');
     };
 
     return (
         <div
             style={{
                 // box Control
-                height: '18.5vw',
-                width: '18.5vw', // ${100/5}
+                height: '14.8vw',
+                width: '14.8vw', // ${100/5}
                 // backgroundColor: 'white',
-
+                
                 // Border Line
                 // borderStyle: 'solid',
                 // borderColor: 'black',
@@ -31,10 +31,10 @@ const Block = (props) => {
                 alignItems: "center",
 
                 // 
-                margin: '-0.1rem',
+                margin: '0.1rem',
 
                 // animations
-                animationName: props.css[1],
+                animationName: props.animation, //css[1],
                 /*animation-fill-mode: both;*/
                 animationDuration: '0.1s',
                 animationIterationCount: 'initial',
@@ -43,13 +43,13 @@ const Block = (props) => {
             <div
                 style={{
                     // box Control
-                    height: '72.5%',
-                    width: '72.5%',
-                    backgroundColor: 'white',
+                    height: '79%',
+                    width: '79%',
+                    backgroundColor: props.backgroundColor,
 
                     // Border Line
                     borderStyle: 'solid',
-                    borderColor: props.css[0],
+                    borderColor: props.borderColor, // css[0],
                     borderRadius: '50%',
                     borderWidth: '2px',
 
@@ -57,7 +57,7 @@ const Block = (props) => {
                     // margin: '0px 0.5rem',
 
                     // animations
-                    animationName: props.css[1],
+                    animationName: props.animation, //css[1],
                     /*animation-fill-mode: both;*/
                     animationDuration: '0.1s',
                     animationIterationCount: 'initial',
@@ -68,7 +68,7 @@ const Block = (props) => {
                     style={{
                         display: 'flex',
                         // animations
-                        animationName: props.css[1],
+                        animationName: props.animation, //css[1],
 
                     }}
 

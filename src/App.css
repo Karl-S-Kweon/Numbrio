@@ -206,7 +206,7 @@
   height: 100%;
   width: 100%;
 
-  font-size: x-large;
+  font-size: large;
   font-weight: bold;
   justify-content: center;
   align-items: center;
@@ -217,9 +217,47 @@
   animation-iteration-count: "initial";
 }
 
-button:focus {
+.snack span {
+  margin: auto;
+  text-align: center;
+}
+
+.mat-simple-snackbar {text-align: center;}
+
+simple-snack-bar span {
+  margin:auto;
+  text-align: center;
+}
+
+/* CSS Animation Effects */
+
+Button:focus {
   outline: none;
 }
+
+/* #baseball {
+  -webkit-transform: scale3d(1.2, 1.2, 1.2);
+    transform: scale3d(1.2, 1.2, 1.2);
+} */
+
+@media (prefers-reduced-motion: no-preference) {
+  #baseball {
+    animation: baseball-spin infinite 12s linear;
+  }
+}
+
+@keyframes baseball-spin {
+  from {
+    transform: rotate(0deg);
+    /* transform: rotateY(0deg); */
+    
+  }
+  to {
+    transform: rotate(180deg);
+    /* transform: rotateY(360deg); */
+    
+  }
+} 
 
 /*  Source
 https://stackoverflow.com/questions/50380360/pure-css-zoom-animation-based-on-timer

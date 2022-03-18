@@ -1,7 +1,6 @@
 import '../App.css';
 import React, { useEffect, useReducer } from 'react';
-import { Snackbar } from "@mui/material/";
-import { Box, Button } from '@mui/material/';
+import { Snackbar, Button, Typography, Slide } from '@mui/material/';
 import Keyboards from './Keyboards/Keyboards';
 import MysterioBlocks from './MyterioBlocks/MyterioBlocks';
 import HeaderBar from './Header/HeaderBar'
@@ -30,6 +29,7 @@ const Numbrio = () => {
             horizontal: 'center'
         },
         gameOver: false,
+        rowChanged: false,
     };
 
     const reducer = (state, newState) => ({ ...state, ...newState });
@@ -47,27 +47,30 @@ const Numbrio = () => {
         setState({ msg: '', snack: msg[0], snackOn: true, gameOver: msg[1] })
         // gameOver = msg[1]
         state.data.push([])
-        state.row++
-    }
-
-    const snackbarClose = (event, reason) => {
-        if (reason === "clickaway") {
-            return;
+        if (!state.rowChanged) {
+            state.row++
+            state.rowChanged = true;
         }
-        setState({ snackOn: false })
-    };
+    }
 
     const msgFromKey = (msg) => {
         // console.log("before pop: " + state.data)
         if (msg.toString() === 'Enter') {
             // state.data[1]=[];
             if (state.data[state.row].length > 3) {
+                // console.log('Enter recognized')
                 // setState({data: []})
                 state.msg = 'Enter'
+                // setState({ msg: 'Enter' })
                 // state.data[1].push(msg);
                 // console.log("Enter pushed to data[1]")
             }
-            msg = ''
+            else {
+                if (!state.gameOver) {
+                    setState({ snackOn: true, snack: 'Not enough numbers!' })
+                }
+            }
+
             // return
         }
         else if (msg.toString() === 'Del') {
@@ -79,18 +82,21 @@ const Numbrio = () => {
             // return
         }
         else if (state.gameOver !== true && state.data[state.row].length < 4) {
-            console.log('gameOver? -->' + state.gameOver)
-            if (state.data[state.row].length === 0) {
-                setState({ data: state.data })
-            }
+            // console.log('gameOver? -->' + state.gameOver)
+            // if (state.data[state.row].length === 0) {
+            //     console.log('Do you need this?')
+
+            //     setState({ data: state.data })       
+            //     console.log('Yeah, I need this for, ' + state.data)         
+            // }
+            state.rowChanged = false;
             state.data[state.row].push(msg)
         }
 
         // console.log("After pop: " + state.data)
-        setState({ data: state.data, row: state.row })
-        // msgFromBlock()
+        setState({ data: state.data, row: state.row, msg: state.msg })
     };
-    
+
     let reset = (
         <Button
             style={{
@@ -102,10 +108,10 @@ const Numbrio = () => {
                 alignItems: "center",
                 backgroundColor: 'crimson',
                 animationName: 'breath',
-                animationDuration: '1.7s',
+                animationDuration: '1.9s',
                 animationIterationCount: 'infinite',
             }}
-        // onClick={{}}
+            onClick={() => { window.location.reload(true) }} // should modify later
         >
             <div
                 className="blockFont"
@@ -116,9 +122,9 @@ const Numbrio = () => {
 
                     backgroundColor: 'royalblue',
 
-                    borderStyle: 'solid',
-                    borderColor: 'white',
-                    borderWidth: '3px',
+                    border: 'solid white 5px',
+                    // borderColor: 'white',
+                    // borderWidth: '5px',
                     borderRadius: '50%',
 
                     display: "flex",
@@ -127,40 +133,101 @@ const Numbrio = () => {
                     fontFamily: 'Unicode Lucida Sans-Serif',
                     // fontFamily: 'Lucida',
                     // fontFamily: '',
-        }}
-    >&#x21bb;</div>
+                }}
+            >&#x21bb;</div>
         </Button >
     );
 
-// console.log(state.data)
-// send keyboards the input array, to prevent selecting duplicate key value
-return (
-    <div
-        className="NumbrioDiv"
-    >
-        <div className='reload'>
-            {state.gameOver && reset}
-            {/* {reset} */}
-        </div>
-        <div className="divHeader">
-            <HeaderBar />
-        </div>
-        <div className="divBody">
-            <MysterioBlocks data={state.data} row={state.row} message={state.msg} getFromChild={msgFromBlock} />
-        </div>
-        <div className="divFooter">
-            <Keyboards data={state.data} row={state.row} getFromChild={msgFromKey} />
-        </div>
+    const snackbarClose = (event, reason) => {
+        if (reason === "clickaway") {
+            return;
+        }
+        setState({ snackOn: false })
+    };
 
-        <Snackbar
-            sx={{ height: "50%" }}
-            anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
-            open={state.snackOn}
-            message={state.snack}
-            autoHideDuration={2200}
-            onClose={snackbarClose}
-        />
-    </div>
-);
+    // console.log(state.data)
+    // send keyboards the input array, to prevent selecting duplicate key value
+    return (
+        <div
+            className="NumbrioDiv"
+        >
+            <div className='reload'>
+                {state.gameOver && reset}
+                {/* {reset} */}
+            </div>
+            <div className="divHeader">
+                <HeaderBar />
+            </div>
+            <div className="divBody">
+                <MysterioBlocks data={state.data} row={state.row} message={state.msg} getFromChild={msgFromBlock} />
+            </div>
+            <div className="divFooter">
+                <Keyboards data={state.data} row={state.row} getFromChild={msgFromKey} />
+            </div>
+
+            <Snackbar
+                // className='snack'
+                sx={
+                    (state.row < 4 ?
+                        {
+                            height: "140vh",
+                            marginLeft: "25%",
+                            zIndex: 0,
+                        } : {
+                            height: "28vh",
+                            marginLeft: "25%",
+                            zIndex: 0,
+                        })
+                }
+                style={
+                    !state.gameOver ?
+                    {
+                        width: "50%",
+                    } : {
+                        width: "96%",
+                        marginLeft: "0%",
+                    }
+                }
+                anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+                open={state.snackOn}
+                TransitionComponent={
+                    function (props) {
+                        return <Slide {...props} direction="left" />;
+                    }
+                }
+                message={
+                    <div
+                        style={
+                            !state.gameOver ? {
+                                width: '100%',
+                                height: '100%',
+                                marginLeft: '11%'
+                            } : {
+                                width: '100%',
+                                height: '100%',
+                                marginLeft: '0'
+                            }
+                        }
+                    >
+                        <Typography
+                            style={{
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center",
+                                margin: 'auto',
+                                textAlign: 'center',
+                                alignContent: 'center',
+                                alignSelf: 'center',
+                                // border: 'solid white 2px',
+                            }}
+                        >
+                            {state.snack}
+                        </Typography></div>
+                }
+                autoHideDuration={state.gameOver === false ? 1250 : 9000}
+                onClose={snackbarClose}
+            />
+        </div>
+    );
 };
 export default Numbrio;
