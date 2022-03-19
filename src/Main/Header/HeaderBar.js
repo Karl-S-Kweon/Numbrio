@@ -403,7 +403,7 @@ const HeaderBar = (props) => {
                         </div>
                         <div
                             style={{
-                                marginBottom: '3%',
+                                marginBottom: '5%',
                                 fontSize: 'medium',
                             }}
                         >
@@ -414,7 +414,7 @@ const HeaderBar = (props) => {
                                 borderTop: 'solid grey 1px',
                                 // borderRadius: '2%',
 
-                                height: '40vw',
+                                height: '50vw',
                                 width: '100%',
 
                                 marginTop: '2%',
