@@ -79,7 +79,7 @@ const Numbrio = () => {
             if (state.data[state.row].length !== 0) {
                 state.data[state.row].pop()
             }
-            // return
+            snackbarClose() 
         }
         else if (state.gameOver !== true && state.data[state.row].length < 4) {
             // console.log('gameOver? -->' + state.gameOver)
@@ -91,6 +91,7 @@ const Numbrio = () => {
             // }
             state.rowChanged = false;
             state.data[state.row].push(msg)
+            snackbarClose()                                               
         }
 
         // console.log("After pop: " + state.data)
@@ -152,6 +153,7 @@ const Numbrio = () => {
 
     const snackbarClose = (event, reason) => {
         if (reason === "clickaway") {
+            // setState({ snackOn: false })
             return;
         }
         setState({ snackOn: false })
@@ -180,15 +182,19 @@ const Numbrio = () => {
             <Snackbar
                 // className='snack'
                 sx={
-                    (state.row < 4 ?
+                    (state.row < 3 ?
                         {
-                            height: "140vh",
-                            marginLeft: "20%",
-                            zIndex: 0,
+                            top: "60vh",
+                            height: "10vh",
+                            marginLeft: "18%",
+                            paddingTop: '-50%',
+                            zIndex: 5,
+                            // border: 'solid black 1px',
                         } : {
-                            height: "28vh",
-                            marginLeft: "20%",
-                            zIndex: 0,
+                            top: "11vh",
+                            height: "11vh",
+                            marginLeft: "18%",
+                            zIndex: 5,
                         })
                 }
                 style={
@@ -213,7 +219,7 @@ const Numbrio = () => {
                             !state.gameOver ? {
                                 width: '100%',
                                 height: '100%',
-                                marginLeft: '11%'
+                                marginLeft: '15%',
                             } : {
                                 width: '100%',
                                 height: '100%',
@@ -230,13 +236,13 @@ const Numbrio = () => {
                                 textAlign: 'center',
                                 alignContent: 'center',
                                 alignSelf: 'center',
-                                // border: 'solid white 2px',
+                                // border: 'solid white 2px',l                         3                3              3    2        3   2              3            3     2           3    
                             }}
                         >
                             {state.snack}
                         </Typography></div>
                 }
-                autoHideDuration={state.gameOver === false ? 1250 : 9000}
+                autoHideDuration={state.gameOver === false ? 2560 : 6000}
                 onClose={snackbarClose}
             />
         </div>

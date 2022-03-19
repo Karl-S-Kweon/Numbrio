@@ -13,7 +13,6 @@ const Block = (props) => {
 
     return (
         <div
-
             style={{
                 // box Control
                 height: '14.8vw',
@@ -31,10 +30,10 @@ const Block = (props) => {
                 margin: '1%',
 
                 // animations
-                animationName: props.animation, //css[1],
-                /*animation-fill-mode: both;*/
-                animationDuration: (props._id === '' ? '0.1s' : '1s'),
-                animationIterationCount: 'initial',
+                // animationName: props.animation, //css[1],
+                // /*animation-fill-mode: both;*/
+                // animationDuration: (props._id === 'guideblock' ? '0.1s' : '0.1s'),
+                // animationIterationCount: 'initial',
             }}
         >
             <div
@@ -58,8 +57,9 @@ const Block = (props) => {
                     // animations
                     animationName: props.animation, //css[1],
                     /*animation-fill-mode: both;*/
-                    animationDuration: (props._id === '' ? '0.1s' : '1s'),
+                    animationDuration: (props._id === 'guideblock' ? '1s' : '0.1s'),
                     animationIterationCount: 'initial',
+                    // animationDelay: (props._id === 'guideblock' ? '0.5s' : '0.1'),
                 }}
             >
                 <div
@@ -68,6 +68,8 @@ const Block = (props) => {
                         display: 'flex',
                         // animations
                         animationName: props.animation, //css[1],
+                        animationDuration: (props._id === 'guideblock' ? '1s' : '0.1s'),
+                        animationIterationCount: 'initial',
                     }}
 
                 // onClick={senKeyData}

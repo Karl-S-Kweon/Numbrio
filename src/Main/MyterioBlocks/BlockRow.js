@@ -1,21 +1,22 @@
 import '../../App.css';
 import React, { useReducer, useEffect } from 'react'; // useReducer 
 // import { Snackbar } from "@material-ui/core";
-import { List } from "@material-ui/core";
+import { List, Grow } from "@mui/material/";
 import Block from './Block'
 import Answer from '../Answer/AnswerKey'
-
 const BlockRow = (props) => {
 
     const initialState = {
         borderColor: 'darkgrey',
         animation: '',
         backgroundColor: [],
+        _id: '',
         result: {
             strike: 0,
             ball: 0
         },
         msgOn: false,
+        transition: false,
     };
 
     const reducer = (state, newState) => ({ ...state, ...newState });
@@ -27,16 +28,21 @@ const BlockRow = (props) => {
         getTrialResult();
         // console.log('how many times BlockRow called? ' + i++)
     })
-    
+
+    const handleGrow = () => {
+        setState({ transition: (prev) => !prev })
+    }
+
     // block quantity
     let index = [0, 1, 2, 3];
 
     const sendToParent = (msg) => {
         props.getFromChild([message, gameOver])
+        // handleGrow()
     };
 
     const msgFromChild = (msg) => {
-        sendToParent(msg)
+        // sendToParent(msg)
     };
 
     // console.log(props.message)
@@ -59,8 +65,8 @@ const BlockRow = (props) => {
                             // ball: state.result.ball
                         },
                         // msg: `Result: ${state.result.strike} S, ${state.result.ball} B!`
-                    }); 
-                    state.backgroundColor[i] ='red'
+                    });
+                    state.backgroundColor[i] = 'red'
                     // backgroundColor='red'
                 }
                 else if (Answer.includes(props.data[i])) {
@@ -72,13 +78,20 @@ const BlockRow = (props) => {
                         // msg: `Result: ${state.result.strike} S, ${state.result.ball} B!`
                         // backgroundColor: 'green'
                     });
-                    state.backgroundColor[i] ='green'
+                    state.backgroundColor[i] = 'green'
                 }
                 else {
-                    state.backgroundColor[i] ='darkgrey'
+                    state.backgroundColor[i] = 'darkgrey'
                 }
+
+                setState({ _id: 'guideblock', transition: true})
+
+                // if(i === 3) {
+                //     setState({_id: 'guideblock'})
+                //     state._id = 'guideblock'
+                // }
                 i++;
-                
+
                 return true
             })
             // console.log(`Result: ${state.result.strike} S, ${state.result.ball} B!`)
@@ -86,14 +99,15 @@ const BlockRow = (props) => {
             setState({
                 result: {
                     strike: 0,
-                    ball: 0
+                    ball: 0,
+                    // _id: 'guideblock'
                 },
                 msgOn: true,
                 // msg: ( state.result.strike === 4 ? `You won this game! The Answer is ${check}!!!` : 
                 // (props.row === 7 ? `Oh, bad luck this time! The Answer is ${check}...` : `You got ${state.result.strike} S, ${state.result.ball} B !!`)),
                 // gameOver: ((props.row === 7 || state.result.strike === 4) ? true : false )
             })
-            
+
             message = (state.result.strike === 4 ? `Congratulations! You won the game!` :
                 (props.row === 4 ? `Oh, Nooo... The Answer was ${check}...` : `You got ${state.result.strike} S, ${state.result.ball} B !!`))
 
@@ -103,12 +117,13 @@ const BlockRow = (props) => {
             // setState({ msgOn: true })
         }
     }
-    
+
     let borderColor = 'darkgrey';
     let animation = '';
 
     // make this under if-else for 'Enter'
     let Blocks = index.map((idx) => {
+        // console.log(state._id)
         if (props.data[idx] !== undefined) {
             // setState({ borderColor: 'dimgrey', animation: 'pulse' })
             borderColor = 'dimgrey'
@@ -120,15 +135,65 @@ const BlockRow = (props) => {
             animation = '';
         }
         return (
-            <Block 
-            value={props.data[idx]} 
-            backgroundColor={state.backgroundColor[idx]} 
-            borderColor={state.backgroundColor[idx] === undefined ? borderColor : state.backgroundColor[idx]} 
-            animation={animation} 
-            key={idx} 
-            fromChild={msgFromChild} /> // fromChild={msgFromChild} 
+            <Grow
+                in={true}
+                style={{ transformOrigin: '50 50 50' }}
+                {...(state._id === 'guideblock' ? { timeout: (idx + 1) * 1600 } : {})}
+                key={idx}
+                // onChange={handleGrow}
+            >
+                <div>
+                    <Block
+                        value={props.data[idx]}
+                        backgroundColor={state.backgroundColor[idx]}
+                        borderColor={state.backgroundColor[idx] === undefined ? borderColor : state.backgroundColor[idx]}
+                        animation={state._id === 'guideblock' ? '' : animation}
+                        key={idx}
+                        _id={state._id}
+                    />
+                </div>
+            </Grow>
+            // fromChild={msgFromChild}
         )
     });
+
+
+    // class classBlocks extends React.Component {
+
+    //     render() {
+    //         index.map((idx) => {
+    //             if (props.data[idx] !== undefined) {
+    //                 // setState({borderColor: 'dimgrey', animation: 'pulse' })
+    //                 borderColor = 'dimgrey'
+    //                 animation = 'pulse'
+    //             }
+    //             else {
+    //                 // setState({borderColor: 'darkgrey', animation: '' })
+    //                 borderColor = 'darkgrey';
+    //                 animation = '';
+    //             }
+    //             return (
+    //                 <Grow
+    //                     in={true}
+    //                     style={{ transformOrigin: '0 0 0' }}
+    //                     {...(true ? { timeout: 1200 } : {})}
+    //                     key={idx}
+    //                 >
+    //                     <Block
+    //                         value={props.data[idx]}
+    //                         backgroundColor={state.backgroundColor[idx]}
+    //                         borderColor={state.backgroundColor[idx] === undefined ? borderColor : state.backgroundColor[idx]}
+    //                         animation={state._id === 'guideblock' ? '' : animation}
+    //                         key={idx}
+    //                         _id={state._id}
+    //                     />
+    //                 </Grow>
+    //                 // fromChild={msgFromChild}
+
+    //             )
+    //         })
+    //     }
+    // }
 
     return (
         <List
@@ -154,10 +219,14 @@ const BlockRow = (props) => {
                 // box space control
                 paddingBottom: '1rem',
                 marginBottom: props.marginBtm,
+
             }}
+
         >
+            {/* {classBlocks} */}
             {Blocks}
-        </List>
+
+        </List >
 
     )
 };

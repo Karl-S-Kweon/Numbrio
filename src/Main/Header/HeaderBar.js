@@ -1,10 +1,14 @@
 import '../../App.css';
 import React, { useState } from 'react';
-import { Button, Avatar, Dialog, DialogTitle, DialogContent, DialogFooter, DialogContentText, List } from "@mui/material/";
+import { Button, Avatar, Dialog, DialogTitle, DialogContent, DialogContentText, List, Slide } from "@mui/material/";
 import graph from './Asset/Graph.png'
 import baseball from './Asset/Baseball.png'
 import Block from '../MyterioBlocks/Block'
-import { textAlign } from '@mui/system';
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+    return <Slide direction="up" ref={ref} {...props} timeout={{enter: 350, exit: 175}}/>; // style={{ transitionDelay: '15s' }}
+});
+
 
 const HeaderBar = (props) => {
     const [open, setOpen] = useState(false);
@@ -22,7 +26,7 @@ const HeaderBar = (props) => {
             style={{
                 margin: '1% 0'
             }}
-            _id={idx === pos ? 'guideblock' : ''}
+            _id={idx === pos ? 'guideblock' : 'none'}
             value={[1, 2, 3, 4][idx]}
             backgroundColor={idx === pos ? `${color}` : ''}
             borderColor={idx === pos ? `${color}` : 'darkgrey'}
@@ -82,7 +86,7 @@ const HeaderBar = (props) => {
                     onClick={handleOpenGraphDialog}
                 >
                     <img
-                        src={graph} width="100%" height="100%"
+                        src={graph} width="100%" height="100%" rel="graph for the game stats"
                     />
                 </Button>
 
@@ -103,6 +107,9 @@ const HeaderBar = (props) => {
 
                     style={{
                         color: 'royalblue',
+                        fontSize: '150%',
+                        fontSmooth: 'always',
+                        fontStyle: 'italic',
                         display: 'flex',
                         justifyContent: "center",
                         alignItems: "center",
@@ -167,6 +174,7 @@ const HeaderBar = (props) => {
                             // textAlign: 'center',
                             marginLeft: '15%'
                         }}
+                        rel="baseball icon for how to play the game"
                     />}
                 >
                     {/* <img
@@ -178,13 +186,13 @@ const HeaderBar = (props) => {
             {/* DIALOG PART */}
 
             <Dialog
-                className='dialog'
-                style={{
-                    width: '100vw',
-                    height: '100vh',
-                    overflow: 'hidden',
-                    // border: '5px solid blue',
-                }}
+                // style={{
+                //     width: '100vw',
+                //     height: '100vh',
+                //     overflow: 'hidden',
+                //     // border: '5px solid blue',
+                // }}
+                TransitionComponent={Transition}
                 fullScreen={true}
                 open={open}
                 onClose={handleCloseDialog}
@@ -203,7 +211,7 @@ const HeaderBar = (props) => {
                         alignItems: 'center',
                         // textAlign: 'center',
 
-                        // borderBottom: '1px solid grey'
+                        borderBottom: '1px solid grey'
                     }}
                 >
                     <div
@@ -273,10 +281,11 @@ const HeaderBar = (props) => {
 
                             color: 'black',
 
-                            // borderBottom: '1px solid grey'
+                            borderBottom: '1px solid grey'
                         }}
                     >
-                        'Cows and Bulls' or 'Number Baseball'.<br />
+                        This app is a recreation of 'Cows and Bulls' <br />
+                        or 'Number Baseball'.<br />
                         Hack a code of 4 digits in 5 tries.
                     </DialogContentText >
                     <DialogContentText
@@ -284,7 +293,7 @@ const HeaderBar = (props) => {
                             fontSize: 'medium',
                             justifyContent: 'flex-start',
                             textAlign: 'left',
-                            padding: '5% 0',
+                            padding: '3% 0',
                             // margin: '0 0 0 -10%',
                             // width: '90%',
 
@@ -326,7 +335,7 @@ const HeaderBar = (props) => {
                                 fontSize: '85%',
                             }}
                         >
-                            Strike! The number <b>1</b> is in the code and in the right place.
+                            Strike! <b>1</b> is in the right place of the code.
                         </div>
                         <List
                             style={{
@@ -358,7 +367,7 @@ const HeaderBar = (props) => {
                                 fontSize: '85%',
                             }}
                         >
-                            Ball! The number <b>2</b> is in the code but in the wrong place.
+                            Ball. <b>2</b> is in the code but in the wrong place.
                         </div>
                         <List
                             style={{
@@ -386,15 +395,15 @@ const HeaderBar = (props) => {
                         </List>
                         <div
                             style={{
-                                marginBottom: '3%',
+                                marginBottom: '5%',
                                 fontSize: '85%',
                             }}
                         >
-                            Oh... The number <b>3</b> is not in the code.
+                            Oh... <b>3</b> is not in the code.
                         </div>
                         <div
                             style={{
-                                margin: '10% 0',
+                                marginBottom: '3%',
                                 fontSize: 'medium',
                             }}
                         >
@@ -402,14 +411,14 @@ const HeaderBar = (props) => {
                         </div>
                         <div
                             style={{
-                                borderTop: 'solid darkgrey 1px',
+                                borderTop: 'solid grey 1px',
                                 // borderRadius: '2%',
 
                                 height: '40vw',
                                 width: '100%',
 
-                                marginTop: '0%',
-                                // paddingLeft: '2%',
+                                marginTop: '2%',
+                                paddingTop: '2%',
 
                                 fontSize: 'medium',
                                 display: 'flex',
@@ -420,11 +429,13 @@ const HeaderBar = (props) => {
 
                             }}
                         >
-                            <div><b>Developer: Karl (A.K.A. Kweon Soonyeong)</b></div>
-                            <div><b><a href="https://www.nytimes.com/games/wordle/index.html">Numbrio Github</a></b></div>
-                            <div><b>Thanks to Wordle dev team!</b></div>
-                            <div><b>UI/UX inspired by Wordle</b></div>
-                            <div><b><a href="https://www.nytimes.com/games/wordle/index.html">Link to Wordle</a></b></div>
+                            <div><b>Developer: Karl (aka Kweon Soonyeong)</b></div>
+                            <div><a href="https://karl-s-kweon.github.io/about/index.html">About Developer</a></div>
+                            <div><a href="https://github.com/Karl-S-Kweon/Numbrio">Numbrio Github</a></div><br />
+
+                            <div>Thanks to Wordle dev team!</div>
+                            <div>UI/UX inspired by Wordle</div>
+                            <div><a href="https://www.nytimes.com/games/wordle/index.html">Link to Wordle</a></div>
                         </div>
                     </DialogContentText >
                 </DialogContent>
@@ -441,7 +452,9 @@ const HeaderBar = (props) => {
                 open={openGraph}
                 onClose={handleCloseGraphDialog}
             >
-                Upcoming Soon!
+                <DialogTitle>
+                    Upcoming Soon!
+                </DialogTitle>
             </Dialog>
         </div >
     )
