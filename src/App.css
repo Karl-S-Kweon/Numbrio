@@ -66,21 +66,23 @@
   flex-shrink: 0;
   z-index: 1;
 
-  background-color: "black";
+  /* background-color: "black"; */
 
   position: absolute;
 
-  top: 62vh;
-  left: 79%;
+  top: 60vh;
+  left: 75%;
 
   /* To keep square */
-  /* max-width: 125vw;
-  max-height: 125vh; */
-  width: 17vw;
-  height: 19vh;
+  /* min-width: 1vw;
+  min-height: 1vh;
+  max-width: 30vw;
+  max-height: 30vh; */
+  width: 20vw;
+  height: 20vw;
 
   /* border: 1px red solid; */
-  border-radius: 50%;
+  /* border-radius: 50%; */
 
   display: "flex";
   justify-content: "center";
@@ -217,17 +219,11 @@
   animation-iteration-count: "initial";
 }
 
-.snack span {
-  margin: auto;
-  text-align: center;
-}
+/* .dialog {
+  overflow-x: hidden;
+  overflow-y: hidden;
+} */
 
-.mat-simple-snackbar {text-align: center;}
-
-simple-snack-bar span {
-  margin:auto;
-  text-align: center;
-}
 
 /* CSS Animation Effects */
 
@@ -242,7 +238,7 @@ Button:focus {
 
 @media (prefers-reduced-motion: no-preference) {
   #baseball {
-    animation: baseball-spin infinite 12s linear;
+    animation: baseball-spin infinite 1.8s linear;
   }
 }
 
@@ -253,9 +249,76 @@ Button:focus {
     
   }
   to {
-    transform: rotate(180deg);
+    transform: rotate(360deg);
     /* transform: rotateY(360deg); */
     
+  }
+} 
+
+
+/* #guideblock {
+  -webkit-transform: scale3d(1.2, 1.2, 1.2);
+  transform: scale3d(1.2, 1.2, 1.2); 
+  border-color: blue;
+} */
+
+
+@media (prefers-reduced-motion: no-preference) {
+  #guideblock {
+    animation: block-spin 1s linear;
+  }
+}
+
+@keyframes block-spin {
+  /* 프레임 끝나면 블락 하단 짤렸다가 다시 생김
+   */
+  from {
+    transform: rotateY(0deg);
+    transform: rotateX(0deg);
+    background-color: white;
+    border-color: darkgrey;
+  }
+  /* 0% {
+    transform: rotateY(0deg);
+    background-color: white;
+    border-color: darkgrey;
+  }
+  10% {
+    transform: rotateY(17.5deg);
+  }
+  20% {
+    transform: rotateY(35deg);
+  }
+  30% {
+    transform: rotateY(52.5deg);
+  }
+  40% {
+    transform: rotateY(70deg);
+  }*/
+  50% {
+    transform: rotateY(240deg);
+    background-color: white;
+    border-color: darkgrey;
+    /* transform: rotateX(0deg); */
+  }
+  /* 60% {
+    transform: rotateY(110deg);
+  }
+  70% {
+    transform: rotateY(127.5deg);
+  }
+  80% {
+    transform: rotateY(142.5deg);
+  }
+  90% {
+    transform: rotateY(160deg);
+  }  */
+  to {
+    /* transform: rotateX(0deg); */
+    transform: rotateY(360deg);
+    
+    /* transform: rotateY(360deg); */
+    /* background-color: red; */
   }
 } 
 

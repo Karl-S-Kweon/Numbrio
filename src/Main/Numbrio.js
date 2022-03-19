@@ -99,14 +99,19 @@ const Numbrio = () => {
 
     let reset = (
         <Button
+            id="baseball"
             style={{
-                zIndex: 0,
-                // border: 'blue 1px solid',
+                zIndex: 1,
+
+                // border: 'crimson 1px dotted',
+                backgroundColor: 'crimson',
+                width: '80%',
+                height: '80%',
                 borderRadius: '50%',
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                backgroundColor: 'crimson',
+
                 animationName: 'breath',
                 animationDuration: '1.9s',
                 animationIterationCount: 'infinite',
@@ -114,15 +119,16 @@ const Numbrio = () => {
             onClick={() => { window.location.reload(true) }} // should modify later
         >
             <div
+
                 className="blockFont"
                 style={{
-                    width: '100%',
-                    height: '100%',
+                    width: '75%',
+                    height: '75%',
                     color: 'white',
 
                     backgroundColor: 'royalblue',
 
-                    border: 'solid white 5px',
+                    border: 'solid white 4px',
                     // borderColor: 'white',
                     // borderWidth: '5px',
                     borderRadius: '50%',
@@ -134,7 +140,13 @@ const Numbrio = () => {
                     // fontFamily: 'Lucida',
                     // fontFamily: '',
                 }}
-            >&#x21bb;</div>
+            >
+                <div
+                    id="baseball"
+                >
+                    &#x21bb;
+                </div>
+            </div>
         </Button >
     );
 
@@ -171,22 +183,22 @@ const Numbrio = () => {
                     (state.row < 4 ?
                         {
                             height: "140vh",
-                            marginLeft: "25%",
+                            marginLeft: "20%",
                             zIndex: 0,
                         } : {
                             height: "28vh",
-                            marginLeft: "25%",
+                            marginLeft: "20%",
                             zIndex: 0,
                         })
                 }
                 style={
                     !state.gameOver ?
-                    {
-                        width: "50%",
-                    } : {
-                        width: "96%",
-                        marginLeft: "0%",
-                    }
+                        {
+                            width: "60%",
+                        } : {
+                            width: "96%",
+                            marginLeft: "0%",
+                        }
                 }
                 anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
                 open={state.snackOn}

@@ -51,7 +51,7 @@ const Key = (props) => {
                 // animationName: props.pointer[2],
                 animationName: props.animation,
                 /*animation-fill-mode: both;*/
-                animationDuration: '0.2s',
+                animationDuration: '0.1s',
                 animationIterationCount: 'initial',
 
                 zIndex: 1,

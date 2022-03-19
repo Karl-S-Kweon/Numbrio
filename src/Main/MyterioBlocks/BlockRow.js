@@ -95,9 +95,9 @@ const BlockRow = (props) => {
             })
             
             message = (state.result.strike === 4 ? `Congratulations! You won the game!` :
-                (props.row === 5 ? `Oh, Nooo... The Answer was ${check}...` : `You got ${state.result.strike} S, ${state.result.ball} B !!`))
+                (props.row === 4 ? `Oh, Nooo... The Answer was ${check}...` : `You got ${state.result.strike} S, ${state.result.ball} B !!`))
 
-            gameOver = ((props.row === 5 || state.result.strike === 4) ? true : false)
+            gameOver = ((props.row === 4 || state.result.strike === 4) ? true : false)
 
             sendToParent()
             // setState({ msgOn: true })

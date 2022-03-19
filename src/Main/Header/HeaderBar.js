@@ -1,10 +1,34 @@
 import '../../App.css';
-import React from 'react';
-import { Button, Avatar } from "@mui/material/";
+import React, { useState } from 'react';
+import { Button, Avatar, Dialog, DialogTitle, DialogContent, DialogFooter, DialogContentText, List } from "@mui/material/";
 import graph from './Asset/Graph.png'
 import baseball from './Asset/Baseball.png'
+import Block from '../MyterioBlocks/Block'
+import { textAlign } from '@mui/system';
 
 const HeaderBar = (props) => {
+    const [open, setOpen] = useState(false);
+    const handleOpenDialog = () => setOpen(true);
+    const handleCloseDialog = () => setOpen(false);
+
+    const [openGraph, setOpenGraph] = useState(false);
+    const handleOpenGraphDialog = () => setOpenGraph(true);
+    const handleCloseGraphDialog = () => setOpenGraph(false);
+
+    let index = [0, 1, 2, 3]
+
+    let blocks = (color, pos) => index.map((idx) => (
+        <Block
+            style={{
+                margin: '1% 0'
+            }}
+            _id={idx === pos ? 'guideblock' : ''}
+            value={[1, 2, 3, 4][idx]}
+            backgroundColor={idx === pos ? `${color}` : ''}
+            borderColor={idx === pos ? `${color}` : 'darkgrey'}
+            key={idx}
+        />
+    ));
 
     return (
         <div
@@ -55,7 +79,7 @@ const HeaderBar = (props) => {
                         marginBottom: '-4%',
                         // zIndex: -5,
                     }}
-
+                    onClick={handleOpenGraphDialog}
                 >
                     <img
                         src={graph} width="100%" height="100%"
@@ -116,7 +140,7 @@ const HeaderBar = (props) => {
                 }}
             >
                 <Button
-                    id="baseball"
+                    onClick={handleOpenDialog}
                     style={{
                         minWidth: '0rem',
                         maxWidth: '2.5rem',
@@ -150,7 +174,276 @@ const HeaderBar = (props) => {
                     /> */}
                 </Button>
             </div>
+
+            {/* DIALOG PART */}
+
+            <Dialog
+                className='dialog'
+                style={{
+                    width: '100vw',
+                    height: '100vh',
+                    overflow: 'hidden',
+                    // border: '5px solid blue',
+                }}
+                fullScreen={true}
+                open={open}
+                onClose={handleCloseDialog}
+            >
+                <DialogTitle
+                    className='dialog'
+                    style={{
+                        height: '1.5vh',
+                        width: '100%',
+                        // color: 'black',
+                        // border: '1px solid blue',
+                        padding: '5% 0%',
+                        display: 'flex',
+                        // flexDirection: 'row',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        // textAlign: 'center',
+
+                        // borderBottom: '1px solid grey'
+                    }}
+                >
+                    <div
+                        style={{
+                            width: '100%',
+                            height: '225%',
+                            fontSize: '85%',
+                            fontWeight: 'bold',
+
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            textAlign: 'center',
+
+                            // border: '1px solid blue',
+                            // margin: '0 0 0 -5%',
+                            paddingLeft: '11%',
+                        }}
+                    >
+                        How to Play
+                    </div >
+                    <Button
+                        style={{
+                            // maxWidth: '15vw',
+                            // minWidth: '1vw',
+                            // width: '0%',
+                            height: '300%',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            textAlign: "center",
+                            // border: '1px solid blue',
+
+                            fontSize: '85%',
+                            fontWeight: 'bold',
+                            // marginLeft: '1%',
+                        }}
+                        onClick={handleCloseDialog}
+                    >
+                        X
+                    </Button>
+
+                </DialogTitle>
+                <DialogContent
+                    style={{
+                        // height: '65vh',
+                        // width: 'inherit',
+
+                        color: 'black',
+
+                        display: 'inline',
+                        flexDirection: 'row',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        textAlign: "center",
+
+                        // border: '1px solid blue',
+                    }}
+                >
+                    <DialogContentText
+                        sx={{
+                            fontSize: 'medium',
+                            justifyContent: 'flex-start',
+                            textAlign: 'left',
+                            padding: '5% 0',
+                            // margin: '0 0 0 -10%',
+                            // width: '115%',
+
+                            color: 'black',
+
+                            // borderBottom: '1px solid grey'
+                        }}
+                    >
+                        'Cows and Bulls' or 'Number Baseball'.<br />
+                        Hack a code of 4 digits in 5 tries.
+                    </DialogContentText >
+                    <DialogContentText
+                        style={{
+                            fontSize: 'medium',
+                            justifyContent: 'flex-start',
+                            textAlign: 'left',
+                            padding: '5% 0',
+                            // margin: '0 0 0 -10%',
+                            // width: '90%',
+
+                            color: 'black',
+
+                            // borderBottom: '1px solid grey'
+                        }}
+                    >
+                        <div>
+                            <b>Game Tips</b>
+                        </div>
+                        <List
+                            style={{
+                                // this box's width/height
+                                width: '75%',
+                                minHeight: '1vh',
+                                maxHeight: '50vh',
+                                height: '20%',
+
+                                // margin: '5% 0',
+
+                                // border line
+                                // border: 'solid pink 1px',
+
+                                // content alignment
+                                display: 'flex',
+                                flexDirection: 'row',
+                                justifyContent: 'flex-start',
+                                alignItems: 'center',
+                                textAlign: "center",
+                                marginBottom: '1%',
+                            }}
+                        >
+                            {blocks('red', 0)}
+                        </List>
+                        <div
+                            style={{
+                                marginBottom: '3%',
+                                fontSize: '85%',
+                            }}
+                        >
+                            Strike! The number <b>1</b> is in the code and in the right place.
+                        </div>
+                        <List
+                            style={{
+                                // this box's width/height
+                                width: '75%',
+                                minHeight: '1vh',
+                                maxHeight: '50vh',
+                                height: '20%',
+
+                                // margin: '5% 0',
+
+                                // border line
+                                // border: 'solid pink 1px',
+
+                                // content alignment
+                                display: 'flex',
+                                flexDirection: 'row',
+                                justifyContent: 'flex-start',
+                                alignItems: 'center',
+                                textAlign: "center",
+                                marginBottom: '1%',
+                            }}
+                        >
+                            {blocks('green', 1)}
+                        </List>
+                        <div
+                            style={{
+                                marginBottom: '3%',
+                                fontSize: '85%',
+                            }}
+                        >
+                            Ball! The number <b>2</b> is in the code but in the wrong place.
+                        </div>
+                        <List
+                            style={{
+                                // this box's width/height
+                                width: '75%',
+                                minHeight: '1vh',
+                                maxHeight: '50vh',
+                                height: '20%',
+
+                                // margin: '5% 0',
+
+                                // border line
+                                // border: 'solid pink 1px',
+
+                                // content alignment
+                                display: 'flex',
+                                flexDirection: 'row',
+                                justifyContent: 'flex-start',
+                                alignItems: 'center',
+                                textAlign: "center",
+                                marginBottom: '1%',
+                            }}
+                        >
+                            {blocks('darkgrey', 2)}
+                        </List>
+                        <div
+                            style={{
+                                marginBottom: '3%',
+                                fontSize: '85%',
+                            }}
+                        >
+                            Oh... The number <b>3</b> is not in the code.
+                        </div>
+                        <div
+                            style={{
+                                margin: '10% 0',
+                                fontSize: 'medium',
+                            }}
+                        >
+                            <b>Enjoy Hacking!</b>
+                        </div>
+                        <div
+                            style={{
+                                borderTop: 'solid darkgrey 1px',
+                                // borderRadius: '2%',
+
+                                height: '40vw',
+                                width: '100%',
+
+                                marginTop: '0%',
+                                // paddingLeft: '2%',
+
+                                fontSize: 'medium',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'space-evenly',
+                                // alignContent: 'space-around',
+                                // alignItems: 'center'
+
+                            }}
+                        >
+                            <div><b>Developer: Karl (A.K.A. Kweon Soonyeong)</b></div>
+                            <div><b><a href="https://www.nytimes.com/games/wordle/index.html">Numbrio Github</a></b></div>
+                            <div><b>Thanks to Wordle dev team!</b></div>
+                            <div><b>UI/UX inspired by Wordle</b></div>
+                            <div><b><a href="https://www.nytimes.com/games/wordle/index.html">Link to Wordle</a></b></div>
+                        </div>
+                    </DialogContentText >
+                </DialogContent>
+            </Dialog>
+            <Dialog
+                // className='dialog'
+                style={{
+                    width: '100vw',
+                    height: '100vh',
+                    overflow: 'hidden',
+                    // border: '5px solid blue',
+                }}
+                // fullScreen={true}
+                open={openGraph}
+                onClose={handleCloseGraphDialog}
+            >
+                Upcoming Soon!
+            </Dialog>
         </div >
     )
 };
-export default HeaderBar;
+export default HeaderBar

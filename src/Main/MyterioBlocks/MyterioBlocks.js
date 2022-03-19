@@ -95,7 +95,7 @@ const MysterioBox = (props) => {
         sendToParent(msg)
     }
 
-    let index = [0, 1, 2, 3, 4, 5]; // , 6, 7, 8
+    let index = [0, 1, 2, 3, 4]; // 5, 6, 7, 8
     // console.log(props.row)
     let row = props.row
     let height = index.length * 16

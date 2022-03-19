@@ -13,38 +13,37 @@ const Block = (props) => {
 
     return (
         <div
+
             style={{
                 // box Control
                 height: '14.8vw',
                 width: '14.8vw', // ${100/5}
                 // backgroundColor: 'white',
-                
-                // Border Line
-                // borderStyle: 'solid',
-                // borderColor: 'black',
-                // borderWidth: '1px',
-                // borderRadius: '50%',
 
-                //
+                // Border Line
+                // border: 'solid black 1px',
+                
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
 
                 // 
-                margin: '0.1rem',
+                margin: '1%',
 
                 // animations
                 animationName: props.animation, //css[1],
                 /*animation-fill-mode: both;*/
-                animationDuration: '0.1s',
+                animationDuration: (props._id === '' ? '0.1s' : '1s'),
                 animationIterationCount: 'initial',
             }}
         >
             <div
+                id={props._id}
+
                 style={{
                     // box Control
-                    height: '79%',
-                    width: '79%',
+                    height: '85%',
+                    width: '85%',
                     backgroundColor: props.backgroundColor,
 
                     // Border Line
@@ -59,7 +58,7 @@ const Block = (props) => {
                     // animations
                     animationName: props.animation, //css[1],
                     /*animation-fill-mode: both;*/
-                    animationDuration: '0.1s',
+                    animationDuration: (props._id === '' ? '0.1s' : '1s'),
                     animationIterationCount: 'initial',
                 }}
             >
@@ -69,7 +68,6 @@ const Block = (props) => {
                         display: 'flex',
                         // animations
                         animationName: props.animation, //css[1],
-
                     }}
 
                 // onClick={senKeyData}
