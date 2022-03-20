@@ -309,7 +309,7 @@ const HeaderBar = (props) => {
                         <List
                             style={{
                                 // this box's width/height
-                                width: '80%',
+                                width: '88%',
                                 minHeight: '1vh',
                                 maxHeight: '50vh',
                                 height: '20%',
@@ -341,7 +341,7 @@ const HeaderBar = (props) => {
                         <List
                             style={{
                                 // this box's width/height
-                                width: '80%',
+                                width: '88%',
                                 minHeight: '1vh',
                                 maxHeight: '50vh',
                                 height: '20%',
@@ -373,7 +373,7 @@ const HeaderBar = (props) => {
                         <List
                             style={{
                                 // this box's width/height
-                                width: '80%',
+                                width: '88%',
                                 minHeight: '1vh',
                                 maxHeight: '50vh',
                                 height: '20%',
