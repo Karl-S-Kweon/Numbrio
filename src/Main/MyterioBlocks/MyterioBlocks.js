@@ -107,21 +107,19 @@ const MysterioBox = (props) => {
     // ));
     // console.log(Answer)    
     let BlockRows = index.map((idx) => (
-        (<BlockRow data={props.data[idx]} key={idx} row={row} message={props.message} marginBtm={idx===5? '0.3rem' : '0'} getFromChild={msgFromChild} />)
+        (<BlockRow data={props.data[idx]} key={idx} row={row} message={props.message} marginBtm={idx===5? '0.0rem' : '0'} getFromChild={msgFromChild} />)
     ));
 
     return (<>
         <List
             style={{
                 // this box's width/height
-                width: '100vw',
-                height: '69vh',
+                width: '100%',
+                height: '100%',
 
                 // border line
-                // borderStyle: 'solid',
-                // borderColor: 'orange',
-                // borderWidth: '3px',
-
+                // border: 'solid blue 1px',
+                
                 // content alignment
                 display: "flex",
                 flexDirection: "column",
@@ -129,12 +127,11 @@ const MysterioBox = (props) => {
                 alignItems: "center",
 
                 // box space control
-                // padding: '0px',
+                padding: '0px',
                 margin: '0px'
             }}
         >
             {BlockRows}
-
         </List>
         {/* <Snackbar
             open={state.msgOn}

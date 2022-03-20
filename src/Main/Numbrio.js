@@ -4,10 +4,12 @@ import { Snackbar, Button, Typography, Slide } from '@mui/material/';
 import Keyboards from './Keyboards/Keyboards';
 import MysterioBlocks from './MyterioBlocks/MyterioBlocks';
 import HeaderBar from './Header/HeaderBar'
-import { fontFamily } from '@mui/system';
+// import { fontFamily } from '@mui/system';
 
 // An example of a React Functional Component using JSX syntax
 const Numbrio = () => {
+    let px = document.documentElement.style.setProperty('--vh', `${window.innerHeight/100}px`);
+
     const initialState = {
         data: [
             [],
@@ -79,7 +81,7 @@ const Numbrio = () => {
             if (state.data[state.row].length !== 0) {
                 state.data[state.row].pop()
             }
-            snackbarClose() 
+            snackbarClose()
         }
         else if (state.gameOver !== true && state.data[state.row].length < 4) {
             // console.log('gameOver? -->' + state.gameOver)
@@ -91,7 +93,7 @@ const Numbrio = () => {
             // }
             state.rowChanged = false;
             state.data[state.row].push(msg)
-            snackbarClose()                                               
+            snackbarClose()
         }
 
         // console.log("After pop: " + state.data)
@@ -106,8 +108,8 @@ const Numbrio = () => {
 
                 // border: 'crimson 1px dotted',
                 backgroundColor: 'crimson',
-                width: '80%',
-                height: '80%',
+                width: '70%', // 80 5:16
+                height: '75%', // 85 5:17
                 borderRadius: '50%',
                 display: "flex",
                 justifyContent: "center",
@@ -123,8 +125,8 @@ const Numbrio = () => {
 
                 className="blockFont"
                 style={{
-                    width: '75%',
-                    height: '75%',
+                    width: '75%', // 78 3:26
+                    height: '72%', // 75 3: 25
                     color: 'white',
 
                     backgroundColor: 'royalblue',
@@ -184,7 +186,7 @@ const Numbrio = () => {
                 sx={
                     (state.row < 3 ?
                         {
-                            top: "60vh",
+                            top: "70vh",
                             height: "10vh",
                             marginLeft: "18%",
                             paddingTop: '-50%',

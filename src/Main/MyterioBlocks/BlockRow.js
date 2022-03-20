@@ -4,6 +4,8 @@ import React, { useReducer, useEffect } from 'react'; // useReducer
 import { List, Grow } from "@mui/material/";
 import Block from './Block'
 import Answer from '../Answer/AnswerKey'
+
+
 const BlockRow = (props) => {
 
     const initialState = {
@@ -200,25 +202,23 @@ const BlockRow = (props) => {
             style={{
                 // this box's width/height
                 width: '100%',
-                height: '7%',
+                height: '16%',
                 // rem: equals to the font size of html (most browsers has defualt 16 px)
                 // em: functions similar to vw or vh, child inherits its parents size. 
                 //     default 16px -> p { 0.75 em } _ 12x -> c { 0.75 em} _ 9 px 
                 //      to Keep size, p {0.75 em } => c { 1 em }
 
                 // border line
-                // borderStyle: 'solid',
-                // borderColor: 'pink',
-                // borderWidth: '1px',
-
+                // border: 'solid pink 1px',
+                
                 // content alignment
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
 
                 // box space control
-                paddingBottom: '1rem',
-                marginBottom: props.marginBtm,
+                // paddingBottom: '1rem',
+                // marginBottom: props.marginBtm,
 
             }}
 

@@ -45,10 +45,27 @@
   color: red;
 } */
 
+/* body { height: 90% } */
+
+/* .fullheight {
+  height: calc(var(--vh, 1vh) * 100);
+} */
+
 .NumbrioDiv {
   width: 100vw;
-  height: 90.6vh;
+  /* min-height: 90.6vh; */
+  /* max-height: 100vh; */
+  height: auto;
   overflow: hidden;
+
+  /* Source: 
+    https://chanind.github.io/javascript/2019/09/28/avoid-100vh-on-mobile-web.html
+    See Comments
+  */
+  /* Study media query for dynamic screen size 
+     browser size dragging will change the elements position
+  */
+  height: calc(var(--vh, 1vh) * 100);
 
   /* border-style: solid;
   border-color: blue;
@@ -56,15 +73,18 @@
   border-radius: 0%; */
 
   display: flex;
+  /* grid-auto-rows: 2fr; */
+  /* grid-template-columns: repeat(auto-fill, minmax(67vh, 1fr)); */
   flex-direction: column;
-  position: absolute;
+  justify-content: space-between;
+  /* position: absolute; */
 
   margin: 0px;
 }
 
 .reload {
   flex-shrink: 0;
-  z-index: 1;
+  z-index: 2;
 
   /* background-color: "black"; */
 
@@ -96,8 +116,8 @@
   /* border-style: solid; */
   /* border-color: purple; */
   /* border-width: 1px; */
-  border-radius: 4%;
-  border-bottom: 1px solid darkgrey;
+  border-radius: 3%;
+  border-bottom: 1px solid darkgrey; /*-bottom*/
 
   display: flex;
   flex-direction: column;
@@ -108,40 +128,32 @@
 
 .divBody {
   width: 100vw;
-  height: 69vh;
+  min-height: 67vh;
+  max-height: 100vh;
+  height: 100%;
 
-  /* border-style: solid;
-  border-color: red;
-  border-width: 1px;
-  border-radius: 0%; */
+  /* border: solid red 1px; */
+  /* border-radius: 0%; */
 
   overflow-y: hidden;
   overflow-x: hidden;
-  /* display: "flex";
-  flex-direction: "column";
-  flex-shrink: 0;
-  
-  
-  justify-content: "flex-start";
-  align-items: "center"; */
-  /* z-index: 1; */
+
+  /* z-index: -1; */
 }
 
 .divFooter {
   width: 100vw;
   height: 14vh;
 
-  /* border-style: solid;
-  border-color: purple;
-  border-width: 1px;*/
-  border-radius: 3%;
-  border-top: solid 1px darkgrey;
+  border-radius: 2%;
+  border-top: solid 1px darkgrey; /*-top*/
+
+  flex-shrink: 0;
 
   /* display: "flex";
   flex-direction: "column"; */
-  flex-shrink: 0;
-
-  margin-top: 0.5rem;
+  
+  /* margin-top: 0.5rem; */
 }
 
 /* 
@@ -224,7 +236,6 @@
   overflow-y: hidden;
 } */
 
-
 /* CSS Animation Effects */
 
 Button:focus {
@@ -246,22 +257,18 @@ Button:focus {
   from {
     transform: rotate(0deg);
     /* transform: rotateY(0deg); */
-    
   }
   to {
     transform: rotate(360deg);
     /* transform: rotateY(360deg); */
-    
   }
-} 
-
+}
 
 /* #guideblock {
   -webkit-transform: scale3d(1.2, 1.2, 1.2);
   transform: scale3d(1.2, 1.2, 1.2); 
   border-color: blue;
 } */
-
 
 @media (prefers-reduced-motion: no-preference) {
   #guideblock {
@@ -316,31 +323,31 @@ Button:focus {
   to {
     /* transform: rotateX(0deg); */
     transform: rotateY(360deg);
-    
+
     /* transform: rotateY(360deg); */
     /* background-color: red; */
   }
-} 
+}
 
 /*  Source
 https://stackoverflow.com/questions/50380360/pure-css-zoom-animation-based-on-timer
 */
 @-webkit-keyframes pulse {
   0% {
-    -webkit-transform: scale3d(1.1, 1.1, 1.1);
-    transform: scale3d(1.1, 1.1, 1.1);
+    -webkit-transform: scale3d(1.15, 1.15, 1.15);
+    transform: scale3d(1.15, 1.15, 1.15);
   }
   15% {
-    -webkit-transform: scale3d(1.09, 1.09, 1.09);
-    transform: scale3d(1.09, 1.09, 1.09);
+    -webkit-transform: scale3d(1.12, 1.12, 1.12);
+    transform: scale3d(1.12, 1.12, 1.12);
   }
   30% {
-    -webkit-transform: scale3d(1.05, 1.05, 1.05);
-    transform: scale3d(1.05, 1.05, 1.05);
+    -webkit-transform: scale3d(1.06, 1.06, 1.06);
+    transform: scale3d(1.06, 1.06, 1.06);
   }
   50% {
-    -webkit-transform: scale3d(1.015, 1.015, 1.015);
-    transform: scale3d(1.015, 1.015, 1.015);
+    -webkit-transform: scale3d(1.01, 1.01, 1.01);
+    transform: scale3d(1.01, 1.01, 1.01);
   }
   to {
     -webkit-transform: scaleX(1);
@@ -350,20 +357,20 @@ https://stackoverflow.com/questions/50380360/pure-css-zoom-animation-based-on-ti
 
 @keyframes pulse {
   0% {
-    -webkit-transform: scale3d(1.1, 1.1, 1.1);
-    transform: scale3d(1.1, 1.1, 1.1);
+    -webkit-transform: scale3d(1.15, 1.15, 1.15);
+    transform: scale3d(1.15, 1.15, 1.15);
   }
   15% {
-    -webkit-transform: scale3d(1.09, 1.09, 1.09);
-    transform: scale3d(1.09, 1.09, 1.09);
+    -webkit-transform: scale3d(1.12, 1.12, 1.12);
+    transform: scale3d(1.12, 1.12, 1.12);
   }
   30% {
-    -webkit-transform: scale3d(1.05, 1.05, 1.05);
-    transform: scale3d(1.05, 1.05, 1.05);
+    -webkit-transform: scale3d(1.06, 1.06, 1.06);
+    transform: scale3d(1.06, 1.06, 1.06);
   }
   50% {
-    -webkit-transform: scale3d(1.015, 1.015, 1.015);
-    transform: scale3d(1.015, 1.015, 1.015);
+    -webkit-transform: scale3d(1.01, 1.01, 1.01);
+    transform: scale3d(1.01, 1.01, 1.01);
   }
   to {
     -webkit-transform: scaleX(1);
@@ -373,64 +380,69 @@ https://stackoverflow.com/questions/50380360/pure-css-zoom-animation-based-on-ti
 
 /* */
 @-webkit-keyframes breath {
+  0% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    opacity: 1%;
+  }
   1% {
     -webkit-transform: scale3d(1.005, 1.005, 1.005);
     transform: scale3d(1.005, 1.005, 1.005);
-    opacity: 0.05%;
+    opacity: 2%;
   }
   2% {
     -webkit-transform: scale3d(1.01, 1.01, 1.01);
     transform: scale3d(1.01, 1.01, 1.01);
-    opacity: 0.5%;
+    opacity: 3%;
   }
   3% {
     -webkit-transform: scale3d(1.015, 1.015, 1.015);
     transform: scale3d(1.015, 1.015, 1.015);
-    opacity: 1%;
+    opacity: 4%;
   }
   4% {
     -webkit-transform: scale3d(1.02, 1.02, 1.02);
     transform: scale3d(1.02, 1.02, 1.02);
-    opacity: 2%;
+    opacity: 5%;
   }
   5% {
     -webkit-transform: scale3d(1.03, 1.03, 1.03);
     transform: scale3d(1.03, 1.03, 1.03);
-    opacity: 3%;
+    opacity: 6%;
   }
   6% {
     -webkit-transform: scale3d(1.04, 1.04, 1.04);
     transform: scale3d(1.04, 1.04, 1.04);
-    opacity: 4%;
+    opacity: 9%;
   }
   7% {
     -webkit-transform: scale3d(1.05, 1.05, 1.05);
     transform: scale3d(1.05, 1.05, 1.05);
-    opacity: 5%;
+    opacity: 15%;
   }
   10% {
     -webkit-transform: scale3d(1.1, 1.1, 1.1);
     transform: scale3d(1.1, 1.1, 1.1);
-    opacity: 15%;
+    opacity: 30%;
   }
   20% {
     -webkit-transform: scale3d(1.15, 1.15, 1.15);
     transform: scale3d(1.15, 1.15, 1.15);
-    opacity: 21%;
+    opacity: 50%;
   }
   30% {
-    -webkit-transform: scale3d(1.2, 1.2, 1.2);
-    transform: scale3d(1.2, 1.2, 1.2);
-    opacity: 43%;
+    -webkit-transform: scale3d(1.18, 1.18, 1.18);
+    transform: scale3d(1.18, 1.18, 1.18);
+    opacity: 70%;
   }
   40% {
-    -webkit-transform: scale3d(1.23, 1.23, 1.23);
-    transform: scale3d(1.23, 1.23, 1.23);
-    opacity: 100;
+    -webkit-transform: scale3d(1.18, 1.18, 1.18);
+    transform: scale3d(1.18, 1.18, 1.18);
+    opacity: 85%;
   }
   50% {
-    -webkit-transform: scale3d(1.25, 1.25, 1.25);
-    transform: scale3d(1.25, 1.25, 1.25);
+    -webkit-transform: scale3d(1.18, 1.18, 1.18);
+    transform: scale3d(1.18, 1.18, 1.18);
     opacity: 100%;
   }
   60% {
@@ -441,28 +453,28 @@ https://stackoverflow.com/questions/50380360/pure-css-zoom-animation-based-on-ti
   70% {
     -webkit-transform: scale3d(1.1, 1.1, 1.1);
     transform: scale3d(1.1, 1.1, 1.1);
-    opacity: 85%;
+    opacity: 80%;
   }
   80% {
     -webkit-transform: scale3d(1.05, 1.05, 1.05);
     transform: scale3d(1.05, 1.05, 1.05);
-    opacity: 70%;
+    opacity: 65%;
   }
   90% {
     -webkit-transform: scale3d(1.04, 1.04, 1.04);
     transform: scale3d(1.04, 1.04, 1.04);
-    opacity: 55%;
+    opacity: 45%;
   }
   95% {
     -webkit-transform: scale3d(1.03, 1.03, 1.03);
     transform: scale3d(1.03, 1.03, 1.03);
-    opacity: 20%;
+    opacity: 25%;
   }
 
   96% {
     -webkit-transform: scale3d(1.02, 1.02, 1.02);
     transform: scale3d(1.02, 1.02, 1.02);
-    opacity: 5%;
+    opacity: 10%;
   }
 
   97% {
@@ -483,7 +495,7 @@ https://stackoverflow.com/questions/50380360/pure-css-zoom-animation-based-on-ti
   100% {
     -webkit-transform: scale3d(1.005, 1.005, 1.005);
     transform: scale3d(1.005, 1.005, 1.005);
-    opacity: 0%;
+    opacity: 1%;
   }
   to {
     -webkit-transform: scaleX(1);
@@ -544,24 +556,24 @@ https://stackoverflow.com/questions/50380360/pure-css-zoom-animation-based-on-ti
     opacity: 50%;
   }
   30% {
-    -webkit-transform: scale3d(1.2, 1.2, 1.2);
-    transform: scale3d(1.2, 1.2, 1.2);
-    opacity: 75%;
+    -webkit-transform: scale3d(1.18, 1.18, 1.18);
+    transform: scale3d(1.18, 1.18, 1.18);
+    opacity: 70%;
   }
   40% {
-    -webkit-transform: scale3d(1.23, 1.23, 1.23);
-    transform: scale3d(1.23, 1.23, 1.23);
-    opacity: 100%;
+    -webkit-transform: scale3d(1.18, 1.18, 1.18);
+    transform: scale3d(1.18, 1.18, 1.18);
+    opacity: 85%;
   }
   50% {
-    -webkit-transform: scale3d(1.25, 1.25, 1.25);
-    transform: scale3d(1.25, 1.25, 1.25);
+    -webkit-transform: scale3d(1.18, 1.18, 1.18);
+    transform: scale3d(1.18, 1.18, 1.18);
     opacity: 100%;
   }
   60% {
     -webkit-transform: scale3d(1.15, 1.15, 1.15);
     transform: scale3d(1.15, 1.15, 1.15);
-    opacity: 100;
+    opacity: 100%;
   }
   70% {
     -webkit-transform: scale3d(1.1, 1.1, 1.1);

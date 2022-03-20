@@ -6,9 +6,8 @@ import baseball from './Asset/Baseball.png'
 import Block from '../MyterioBlocks/Block'
 
 const Transition = React.forwardRef(function Transition(props, ref) {
-    return <Slide direction="up" ref={ref} {...props} timeout={{enter: 350, exit: 175}}/>; // style={{ transitionDelay: '15s' }}
+    return <Slide direction="up" ref={ref} {...props} timeout={{ enter: 350, exit: 175 }} />; // style={{ transitionDelay: '15s' }}
 });
-
 
 const HeaderBar = (props) => {
     const [open, setOpen] = useState(false);
@@ -117,20 +116,6 @@ const HeaderBar = (props) => {
                         // border: 'solid 1px red',
                     }}
                 >Numbrio
-                    {/* <div
-                        style={{
-                            height: '100%',
-                            fontSize: '0.5rem',
-                            color: 'indigo',
-                            display: 'flex',
-                            justifyContent: "space-between",
-                            alignItems: "flex-start",
-                            textAlign: 'flex-start',
-                            border: 'solid 1px red',
-                        }}
-                    >
-                        TM
-                    </div> */}
                 </div>
             </div>
             <div
@@ -164,26 +149,42 @@ const HeaderBar = (props) => {
 
                         // zIndex: -5,
                     }}
-                    startIcon={<Avatar
-                        src={baseball}
-                        style={{
-                            // border: '1px solid blue',
-                            // display: 'flex',
-                            // justifyContent: "center",
-                            // alignItems: "center",
-                            // textAlign: 'center',
-                            marginLeft: '15%'
-                        }}
-                        rel="baseball icon for how to play the game"
-                    />}
+                // startIcon={<Avatar
+                //     src={baseball}
+                //     style={{
+                //         // border: '1px solid blue',
+                //         // display: 'flex',
+                //         // justifyContent: "center",
+                //         // alignItems: "center",
+                //         // textAlign: 'center',
+                //         marginLeft: '15%'
+                //     }}
+                //     rel="baseball icon for how to play the game"
+                // />}
                 >
-                    {/* <img
-                        src={baseball} width="35vw" height="35vh"
-                    /> */}
+                    <img
+                        src={baseball} width="35vw" height="35vh" rel="baseball icon for how to play the game"
+                    />
+                    <div
+                        style={{
+                            position: 'absolute',
+                            zIndex: 2,
+                            top: '7.5%',
+                            left: '37%',
+                            fontSize: '150%',
+                            fontWeight: 'bold',
+                            color: 'indigo',
+                            // transform: translate('-50 %', '-50 %'),
+                        }}
+                    >?</div>
                 </Button>
             </div>
 
+
+
             {/* DIALOG PART */}
+
+
 
             <Dialog
                 // style={{
@@ -200,7 +201,7 @@ const HeaderBar = (props) => {
                 <DialogTitle
                     className='dialog'
                     style={{
-                        height: '1.5vh',
+                        height: '0.5vh',
                         width: '100%',
                         // color: 'black',
                         // border: '1px solid blue',
@@ -217,7 +218,7 @@ const HeaderBar = (props) => {
                     <div
                         style={{
                             width: '100%',
-                            height: '225%',
+                            height: '25%',
                             fontSize: '85%',
                             fontWeight: 'bold',
 
@@ -270,8 +271,8 @@ const HeaderBar = (props) => {
                         // border: '1px solid blue',
                     }}
                 >
-                    <DialogContentText
-                        sx={{
+                    <div
+                        style={{
                             fontSize: 'medium',
                             justifyContent: 'flex-start',
                             textAlign: 'left',
@@ -287,8 +288,8 @@ const HeaderBar = (props) => {
                         This app is a recreation of 'Cows and Bulls' <br />
                         or 'Number Baseball'.<br />
                         Hack a code of 4 digits in 5 tries.
-                    </DialogContentText >
-                    <DialogContentText
+                    </div >
+                    <div
                         style={{
                             fontSize: 'medium',
                             justifyContent: 'flex-start',
@@ -308,7 +309,7 @@ const HeaderBar = (props) => {
                         <List
                             style={{
                                 // this box's width/height
-                                width: '75%',
+                                width: '80%',
                                 minHeight: '1vh',
                                 maxHeight: '50vh',
                                 height: '20%',
@@ -340,7 +341,7 @@ const HeaderBar = (props) => {
                         <List
                             style={{
                                 // this box's width/height
-                                width: '75%',
+                                width: '80%',
                                 minHeight: '1vh',
                                 maxHeight: '50vh',
                                 height: '20%',
@@ -372,7 +373,7 @@ const HeaderBar = (props) => {
                         <List
                             style={{
                                 // this box's width/height
-                                width: '75%',
+                                width: '80%',
                                 minHeight: '1vh',
                                 maxHeight: '50vh',
                                 height: '20%',
@@ -399,7 +400,7 @@ const HeaderBar = (props) => {
                                 fontSize: '85%',
                             }}
                         >
-                            Oh... <b>3</b> is not in the code.
+                            Foul. <b>3</b> is not in the code.
                         </div>
                         <div
                             style={{
@@ -437,7 +438,7 @@ const HeaderBar = (props) => {
                             <div>UI/UX inspired by Wordle</div>
                             <div><a href="https://www.nytimes.com/games/wordle/index.html">Link to Wordle</a></div>
                         </div>
-                    </DialogContentText >
+                    </div >
                 </DialogContent>
             </Dialog>
             <Dialog

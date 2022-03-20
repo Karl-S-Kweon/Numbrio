@@ -15,25 +15,22 @@ const Block = (props) => {
         <div
             style={{
                 // box Control
-                height: '14.8vw',
-                width: '14.8vw', // ${100/5}
-                // backgroundColor: 'white',
+                height: '16.8vw',
+                width: '16.8vw', // ${100/5}
 
                 // Border Line
                 // border: 'solid black 1px',
                 
+                // 
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
 
                 // 
-                margin: '1%',
+                padding: '0%',
+                margin: '0 0.2rem',
 
-                // animations
-                // animationName: props.animation, //css[1],
-                // /*animation-fill-mode: both;*/
-                // animationDuration: (props._id === 'guideblock' ? '0.1s' : '0.1s'),
-                // animationIterationCount: 'initial',
+                // zIndex: 11,
             }}
         >
             <div
@@ -41,8 +38,8 @@ const Block = (props) => {
 
                 style={{
                     // box Control
-                    height: '85%',
-                    width: '85%',
+                    height: '90%',
+                    width: '90%',
                     backgroundColor: props.backgroundColor,
 
                     // Border Line
@@ -52,8 +49,9 @@ const Block = (props) => {
                     borderWidth: '2px',
 
                     // 
-                    // margin: '0px 0.5rem',
-
+                    // padding: '0%',
+                    // margin: '0.5%',
+                    
                     // animations
                     animationName: props.animation, //css[1],
                     /*animation-fill-mode: both;*/
