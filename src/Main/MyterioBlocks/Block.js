@@ -15,8 +15,10 @@ const Block = (props) => {
         <div
             style={{
                 // box Control
-                height: '16.8vw',
-                width: '16.8vw', // ${100/5}
+                minHeight: '1vh',
+                minWidth: '1vh',
+                height: '7vh',
+                width: '7vh', // ${100/5}
 
                 // Border Line
                 // border: 'solid black 1px',
@@ -28,7 +30,7 @@ const Block = (props) => {
 
                 // 
                 padding: '0%',
-                margin: '0 0.2rem',
+                margin: '-0.35rem 0.1rem',
 
                 // zIndex: 11,
             }}
@@ -39,7 +41,7 @@ const Block = (props) => {
                 style={{
                     // box Control
                     height: '90%',
-                    width: '90%',
+                    width: '92%',
                     backgroundColor: props.backgroundColor,
 
                     // Border Line

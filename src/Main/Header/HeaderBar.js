@@ -1,6 +1,6 @@
 import '../../App.css';
 import React, { useState } from 'react';
-import { Button, Avatar, Dialog, DialogTitle, DialogContent, DialogContentText, List, Slide } from "@mui/material/";
+import { Button, Dialog, DialogTitle, DialogContent, List, Slide } from "@mui/material/";
 import graph from './Asset/Graph.png'
 import baseball from './Asset/Baseball.png'
 import Block from '../MyterioBlocks/Block'

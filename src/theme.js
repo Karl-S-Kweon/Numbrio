@@ -8,7 +8,7 @@ all about here: https://material.io/ We’re going to implement Material Design 
 by using a library called Material-UI http://www.material-ui.com.
 Material-UI is a set of react components that implement material design principles.
 */
-import { createTheme } from '@material-ui/core/styles';
+import { createTheme } from '@mui/material';
 export default createTheme({
     typography: {
         useNextVariants: true

@@ -1,6 +1,6 @@
 import '../../App.css';
 import React, { useEffect } from 'react'; // , useReducer, useState 
-import { List, Box, ButtonGroup } from "@material-ui/core";
+import { ButtonGroup } from "@mui/material/";
 import Key from './key'
 import theme from '../../theme'
 
@@ -117,13 +117,12 @@ const KeyRow = (props) => {
             // size="large"
             style={{
                 // this box's width/height
-                width: '100vw',
+                width: '100%',
                 height: '50%',
 
                 // border line
-                // borderStyle: 'solid',
-                // borderColor: 'blue',
-                // borderWidth: '1px',
+                // border: 'solid blue 1px',
+                
 
                 // content alignment
                 display: 'flex',
@@ -132,7 +131,7 @@ const KeyRow = (props) => {
 
                 // box space control
                 // padding: '0px',
-                // margin: '0.5px'
+                margin: '0.1rem 0.05rem 0 0.05rem'
             }}
         >{
                 keyboxes()

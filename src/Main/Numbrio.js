@@ -8,7 +8,7 @@ import HeaderBar from './Header/HeaderBar'
 
 // An example of a React Functional Component using JSX syntax
 const Numbrio = () => {
-    let px = document.documentElement.style.setProperty('--vh', `${window.innerHeight/100}px`);
+    let px = document.documentElement.style.setProperty('innerheight', `${window.innerHeight/100}px`);
 
     const initialState = {
         data: [
@@ -106,10 +106,10 @@ const Numbrio = () => {
             style={{
                 zIndex: 1,
 
-                // border: 'crimson 1px dotted',
+                // border: 'crimson 1px solid',
                 backgroundColor: 'crimson',
-                width: '70%', // 80 5:16
-                height: '75%', // 85 5:17
+                width: '9vh', // 80 5:16
+                height: '9vh', // 85 5:17
                 borderRadius: '50%',
                 display: "flex",
                 justifyContent: "center",
@@ -126,12 +126,12 @@ const Numbrio = () => {
                 className="blockFont"
                 style={{
                     width: '75%', // 78 3:26
-                    height: '72%', // 75 3: 25
+                    height: '75%', // 75 3: 25
                     color: 'white',
 
                     backgroundColor: 'royalblue',
 
-                    border: 'solid white 4px',
+                    border: 'solid ghostwhite 4px',
                     // borderColor: 'white',
                     // borderWidth: '5px',
                     borderRadius: '50%',
