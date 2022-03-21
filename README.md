@@ -1,4 +1,4 @@
-# **React App  - Numbrio **
+#**React App  - Numbrio**
 ##### This is a recreation of 'Bulls and Cows' or 'Number Baseball' game. <br/> Unlike the classic rules, this game displays visible results of each guess, as its UI/UX inspired by Wordle. <br/> This will be enjoyable for all ages after 5y. 
 
 ## ** Environments **
