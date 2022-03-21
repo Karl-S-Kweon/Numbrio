@@ -2,8 +2,7 @@
 #### This is a recreation of 'Bulls and Cows' or 'Number Baseball' game. <br/> Unlike the classic rules, this game displays visible results of each guess, as its UI/UX inspired by Wordle. <br/> This will be enjoyable for all ages after 5y.
 
 ## Environments
-#### This app is currently developed by the front-end side only.
-#### But this is still under deveopment. So, Upcoming updates will include some game features as well as expansion of app environment.
+#### This app is currently developed by the front-end side only. <br/> However, this is still under development. Upcoming updates will may include Back-End Side.
 
 ## Assignments
 #### The purpose of the project was to review my web skills. <br/> The result seems very nice, but I still want to expand functionalities of this proejct. 
