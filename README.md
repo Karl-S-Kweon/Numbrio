@@ -1,4 +1,4 @@
-### React App  - Numbrio
+## React App  - Numbrio
 ### Installations
 #### Node.js
 #### React
