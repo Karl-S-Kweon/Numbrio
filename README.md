@@ -14,15 +14,15 @@
 ### Back-ENd Installations
 #### * Upcoming Soon. 
 ### Running the porject
-#### You need to install necessary  using ```npm install```.  <br/> After installation, run the project with ```npm run dev```. The server will run on ```localhost:3000``` (windows).
+#### You need to install necessary  using `npm install`.  <br/> After installation, run the project with `npm run dev`. The server will run on `localhost:3000` (windows).
 ### Testing the project
 #### No tests were created for the project
 
 ## Deployment
-##### Deployed on Heroku at <a href="https://numbrio.herokuapp.com/">Numbrio</a>
+##### Deployed on Heroku at <a href="https://numbrio.herokuapp.com/">numbrio.herokuapp.com</a>
 
 ## Author 
-##### Karl, A.K.A. Soonyeong Kweon, `with React | MUI | CSS`
+##### Karl, A.K.A. Soonyeong Kweon, with `React | MUI | CSS`
 
 ## License
 ##### This project is licensed under the MIT License
