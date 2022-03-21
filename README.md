@@ -28,9 +28,7 @@
 ##### This project is licensed under the MIT License
 
 ## Ackenowledgements
-#### To Wordle Team for the inspiration on UI/UX. They recently lacunced Wordle2 <a href="https://www.wordle2.in/">Wordle2</a>
-<br/> To all contirubutors for React | MUI | HTML | CSS | Javascript
-<br/>Family, and freidens for all support (Designs, UX and others)
+#### To Wordle Team for the inspiration on UI/UX. They recently lacunced Wordle2 <a href="https://www.wordle2.in/">Wordle2</a><br/> To all contirubutors for React | MUI | HTML | CSS | Javascript<br/>Family, and freidens for all support (Designs, UX and others)
 
 ## App Overview
 #### Welcome to Numbrio! Let's play this simple game
