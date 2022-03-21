@@ -10,7 +10,7 @@
 
 ## Project Setups
 ### Front-End Installations
-#### - React: 17+ <br/> - Mui/material
+#### - React: 17+ <br/> - Mui/material with Emotion/react, Emtion/styled
 ### Back-ENd Installations
 #### * Upcoming Soon. 
 ### Running the porject
