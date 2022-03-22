@@ -53,7 +53,7 @@ const HeaderBar = (props) => {
             <div
                 style={{
                     height: '100%',
-                    width: '25vw',
+                    width: '20vw',
 
                     display: 'flex',
                     justifyContent: "center",
@@ -94,7 +94,7 @@ const HeaderBar = (props) => {
             {/* Logo - App Name */}
             <div
                 style={{
-                    width: '50vw',
+                    width: '60vw',
                     height: '100%',
                     display: 'flex',
                     justifyContent: "center",
@@ -125,7 +125,7 @@ const HeaderBar = (props) => {
                 style={{
                     // box Control
                     height: '100%',
-                    width: '25vw',
+                    width: '20vw',
                     // border: '1px pink solid',
 
                     display: 'flex',
@@ -138,11 +138,11 @@ const HeaderBar = (props) => {
                     onClick={handleOpenDialog}
                     style={{
                         minWidth: '0rem',
-                        maxWidth: '2.5rem',
+                        maxWidth: '4rem',
                         minHeight: '0rem',
-                        maxHeight: '2.5rem',
-                        width: '70%',
-                        height: '76%',
+                        maxHeight: '4rem',
+                        width: '2.5rem',
+                        height: '2.4rem',
                         // border: '1px solid red',
                         borderRadius: '50%',
                         // backgroundColor: 'black',
@@ -151,17 +151,18 @@ const HeaderBar = (props) => {
                         alignItems: "center",
                         textAlign: 'center',
 
+                        // paddingTop:'7.5%',
                         // zIndex: -5,
                     }}
                 >
                     <img
-                        src={baseball} width="39vw" height="39vh" rel="baseball icon for how to play the game"
+                        src={baseball} width="39vw" height="39vw" rel="baseball icon for how to play the game"
                     />
                     <div
                         id='guidequestion'
                         style={{
                             position: 'absolute',
-                            zIndex: 2,
+                            // zIndex: 2,
                             // top: '1%',
                             left: '34%',
                             fontSize: '150%',
