@@ -8,7 +8,7 @@ import HeaderBar from './Header/HeaderBar'
 
 // An example of a React Functional Component using JSX syntax
 const Numbrio = () => {
-    let px = document.documentElement.style.setProperty('innerheight', `${window.innerHeight/100}px`);
+    let px = document.documentElement.style.setProperty('innerheight', `${window.innerHeight / 100}px`);
 
     const initialState = {
         data: [
@@ -183,27 +183,37 @@ const Numbrio = () => {
 
             <Snackbar
                 // className='snack'
-                sx={
-                    (state.row < 3 ?
-                        {
-                            top: "70vh",
-                            height: "10vh",
-                            marginLeft: "18%",
-                            paddingTop: '-50%',
-                            zIndex: 5,
-                            // border: 'solid black 1px',
-                        } : {
-                            top: "11vh",
-                            height: "11vh",
-                            marginLeft: "18%",
-                            zIndex: 5,
-                        })
-                }
+                // sx={
+                //     (state.row < 3 ?
+                //         {
+                //             top: "70vh",
+                //             height: "10vh",
+                //             marginLeft: "0vw",
+                //             paddingTop: '-50%',
+                //             zIndex: 5,
+                //             // border: 'solid black 1px',
+                //         } : {
+                //             top: "11vh",
+                //             height: "11vh",
+                //             marginLeft: "18%",
+                //             zIndex: 5,
+                //         })
+                // }
                 style={
                     !state.gameOver ?
                         {
+                            top: "65vh",
+                            height: "10vh",
+                            marginLeft: "20vw",
+                            paddingTop: '-50%',
+                            zIndex: 5,
                             width: "60%",
                         } : {
+                            top: "65vh",
+                            height: "10vh",
+                            marginLeft: "20vw",
+                            paddingTop: '-50%',
+                            zIndex: 5,
                             width: "96%",
                             marginLeft: "0%",
                         }
@@ -221,7 +231,7 @@ const Numbrio = () => {
                             !state.gameOver ? {
                                 width: '100%',
                                 height: '100%',
-                                marginLeft: '15%',
+                                marginLeft: '10%',
                             } : {
                                 width: '100%',
                                 height: '100%',

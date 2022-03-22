@@ -123,12 +123,12 @@ const MysterioBox = (props) => {
                 // content alignment
                 display: "flex",
                 flexDirection: "column",
-                justifyContent: "space-evenly",
+                justifyContent: "center",
                 alignItems: "center",
 
                 // box space control
-                padding: '0px',
-                margin: '0px'
+                padding: '0',
+                margin: '0'
             }}
         >
             {BlockRows}

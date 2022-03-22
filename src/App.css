@@ -1,61 +1,8 @@
-/* .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 98vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
-/* .divBox {
-  width: 20px;
-  height: 20px;
-  border-style:solid;
-  border-color: black;
-  color: red;
-} */
-
-/* body { height: 90% } */
-
-/* .fullheight {
-  height: calc(var(--vh, 1vh) * 100);
-} */
-
 .NumbrioDiv {
   width: 100vw;
-  /* min-height: 90.6vh; */
-  /* max-height: 100vh; */
-  height: 100vh;
+  min-height: 90.6vh;
+  max-height: calc(100vh - innerheight);
+  height: 100%;
   overflow: hidden;
 
   /* Source: 
@@ -77,20 +24,20 @@
   /* grid-template-columns: repeat(auto-fill, minmax(67vh, 1fr)); */
   flex-direction: column;
   justify-content: space-between;
-  /* position: absolute; */
+  position: absolute;
 
   margin: 0px;
 }
 
 .reload {
   flex-shrink: 0;
-  z-index: 2;
+  z-index: 6;
 
   /* background-color: "black"; */
 
   position: absolute;
 
-  top: 70vh;
+  top: 63vh;
   left: 75%;
   margin-left: -5%;
   /* To keep square */
@@ -114,7 +61,7 @@
   height: 3rem;
 
   position: sticky;
-  
+  align-self: flex-start;
   border-radius: 3%;
   border-bottom: 1px solid darkgrey; /*-bottom*/
 
@@ -129,9 +76,9 @@
 
 .divBody {
   width: 100vw;
-  /* min-height: 1vh; 
-  max-height: calc(--vh - 21.6); */
-  height: calc(innerheight - 21.6);
+  min-height: 1vh; 
+  max-height: calc(innerheight - 21.6vh);
+  height: 100%;
   /*100 - 21.6 = 78.4   */
 
 
@@ -162,33 +109,6 @@
   align-items: "center";
   
   /* margin-top: 0.5rem; */
-}
-
-/* 
-.keyboard {
-  border-style: solid;
-  border-color: black;
-  border-width: 0px;
-} */
-
-.KeyRow {
-  /* this box's width/height */
-  width: 100%;
-  height: 50%;
-
-  /* border line */
-  /* border-style: solid;
-  border-color: blue;
-  border-width: 1px; */
-
-  /* content alignment */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  /* box space control */
-  /* padding: '0px'; */
-  /* margin: 1px 1px; */ /* this makes scrolling */
 }
 
 .keyFont {
@@ -287,13 +207,13 @@ Button:focus {
   from, to {
     /* top: '5%'; */
     transform: rotateY(0deg);
-    bottom: -10%;
+    bottom: -0%;
     /* transform: translateX('1%') rotateY(0deg) */
   }
   50% {
     /* top: '-15%'; */
     transform: rotateY(180deg);
-    bottom: 5%;
+    bottom: 8%;
     opacity: 0%;
     /* transform: translateX('-6%%') rotateY(360deg) */
   }

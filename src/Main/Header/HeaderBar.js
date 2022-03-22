@@ -2,8 +2,9 @@ import '../../App.css';
 import React, { useState } from 'react';
 import { Button, Dialog, DialogTitle, DialogContent, List, Slide } from "@mui/material/";
 import graph from './Asset/Graph.png'
-import baseball from './Asset/Baseball1.svg'
+import baseball from './Asset/Baseball.png'
 import Block from '../MyterioBlocks/Block'
+import { css, jsx } from '@emotion/react'
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} timeout={{ enter: 350, exit: 175 }} />; // style={{ transitionDelay: '15s' }}
@@ -105,10 +106,9 @@ const HeaderBar = (props) => {
             >
                 <div
                     className='blockFont'
-
                     style={{
                         color: 'royalblue',
-                        fontSize: '150%',
+                        fontSize: 'calc(15px + 1.5 vh)',
                         fontSmooth: 'always',
                         fontStyle: 'italic',
                         display: 'flex',
@@ -137,12 +137,12 @@ const HeaderBar = (props) => {
                 <Button
                     onClick={handleOpenDialog}
                     style={{
-                        minWidth: '0rem',
-                        maxWidth: '4rem',
-                        minHeight: '0rem',
-                        maxHeight: '4rem',
-                        width: '2.5rem',
-                        height: '2.4rem',
+                        minWidth: '0',
+                        maxWidth: '41px',
+                        minHeight: '0',
+                        maxHeight: '41px',
+                        width: '100%',
+                        height: '100%',
                         // border: '1px solid red',
                         borderRadius: '50%',
                         // backgroundColor: 'black',
@@ -151,12 +151,12 @@ const HeaderBar = (props) => {
                         alignItems: "center",
                         textAlign: 'center',
 
-                        // paddingTop:'7.5%',
+                        // paddingTop:'0%',
                         // zIndex: -5,
                     }}
                 >
                     <img
-                        src={baseball} width="39vw" height="39vw" rel="baseball icon for how to play the game"
+                        src={baseball} width="40px" height="40px" rel="baseball icon for how to play the game"
                     />
                     <div
                         id='guidequestion'
@@ -164,8 +164,8 @@ const HeaderBar = (props) => {
                             position: 'absolute',
                             // zIndex: 2,
                             // top: '1%',
-                            left: '34%',
-                            fontSize: '150%',
+                            left: '37.5%',
+                            fontSize: '140%',
                             fontWeight: 'bold',
                             color: 'crimson',
                             // transform: translate('-50 %', '-50 %'),

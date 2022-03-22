@@ -17,8 +17,8 @@ const Block = (props) => {
                 // box Control
                 minHeight: '1vh',
                 minWidth: '1vh',
-                height: '7vh',
-                width: '7vh', // ${100/5}
+                height: '6.5vh',
+                width: '6.5vh', // ${100/5}
 
                 // Border Line
                 // border: 'solid black 1px',
@@ -30,7 +30,7 @@ const Block = (props) => {
 
                 // 
                 padding: '0%',
-                margin: '-0.35rem 0.1rem',
+                margin: '0 0.4rem',
 
                 // zIndex: 11,
             }}
@@ -40,7 +40,7 @@ const Block = (props) => {
 
                 style={{
                     // box Control
-                    height: '90%',
+                    height: '92%',
                     width: '92%',
                     backgroundColor: props.backgroundColor,
 
@@ -48,7 +48,7 @@ const Block = (props) => {
                     borderStyle: 'solid',
                     borderColor: props.borderColor, // css[0],
                     borderRadius: '50%',
-                    borderWidth: '2px',
+                    borderWidth: '0.3vh',
 
                     // 
                     // padding: '0%',
@@ -65,6 +65,7 @@ const Block = (props) => {
                 <div
                     className="blockFont"
                     style={{
+                        fontSize: '2.5vh',
                         display: 'flex',
                         // animations
                         animationName: props.animation, //css[1],

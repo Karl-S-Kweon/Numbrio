@@ -159,50 +159,13 @@ const BlockRow = (props) => {
         )
     });
 
-
-    // class classBlocks extends React.Component {
-
-    //     render() {
-    //         index.map((idx) => {
-    //             if (props.data[idx] !== undefined) {
-    //                 // setState({borderColor: 'dimgrey', animation: 'pulse' })
-    //                 borderColor = 'dimgrey'
-    //                 animation = 'pulse'
-    //             }
-    //             else {
-    //                 // setState({borderColor: 'darkgrey', animation: '' })
-    //                 borderColor = 'darkgrey';
-    //                 animation = '';
-    //             }
-    //             return (
-    //                 <Grow
-    //                     in={true}
-    //                     style={{ transformOrigin: '0 0 0' }}
-    //                     {...(true ? { timeout: 1200 } : {})}
-    //                     key={idx}
-    //                 >
-    //                     <Block
-    //                         value={props.data[idx]}
-    //                         backgroundColor={state.backgroundColor[idx]}
-    //                         borderColor={state.backgroundColor[idx] === undefined ? borderColor : state.backgroundColor[idx]}
-    //                         animation={state._id === 'guideblock' ? '' : animation}
-    //                         key={idx}
-    //                         _id={state._id}
-    //                     />
-    //                 </Grow>
-    //                 // fromChild={msgFromChild}
-
-    //             )
-    //         })
-    //     }
-    // }
-
     return (
         <List
             style={{
                 // this box's width/height
                 width: '100%',
-                height: '16%',
+                maxHeight: '7vh',
+                height: '11%',
                 // rem: equals to the font size of html (most browsers has defualt 16 px)
                 // em: functions similar to vw or vh, child inherits its parents size. 
                 //     default 16px -> p { 0.75 em } _ 12x -> c { 0.75 em} _ 9 px 
@@ -215,11 +178,10 @@ const BlockRow = (props) => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-
+                
                 // box space control
-                // paddingBottom: '1rem',
-                // marginBottom: props.marginBtm,
-
+                paddingBottom: '0',
+                marginBottom: props.marginBtm,
             }}
 
         >
