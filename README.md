@@ -14,7 +14,7 @@
 ## Project Setups
 ### Front-End Installations
 #### - React: 17+ <br/> - Mui/material with Emotion/react, Emotion/styled
-### Back-ENd Installations
+### Back-End Installations
 #### - Upcoming Soon. 
 ### Running the porject
 #### You need to install necessary  using `npm install`.  <br/> After installation, run the project with `npm run dev`. The server will run on `localhost:3000` (windows).

@@ -2,7 +2,7 @@ import '../../App.css';
 import React, { useState } from 'react';
 import { Button, Dialog, DialogTitle, DialogContent, List, Slide } from "@mui/material/";
 import graph from './Asset/Graph.png'
-import baseball from './Asset/Baseball.png'
+import baseball from './Asset/Baseball1.svg'
 import Block from '../MyterioBlocks/Block'
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -49,6 +49,7 @@ const HeaderBar = (props) => {
                 // border: 'solid 1px red',
             }}
         >
+            {/* Graph */}
             <div
                 style={{
                     height: '100%',
@@ -79,7 +80,7 @@ const HeaderBar = (props) => {
                         alignItems: "center",
                         // textAlign: 'center',
                         // paddingTop: '0.5rem',
-                        marginBottom: '-4%',
+                        marginBottom: '-1%',
                         // zIndex: -5,
                     }}
                     onClick={handleOpenGraphDialog}
@@ -90,6 +91,7 @@ const HeaderBar = (props) => {
                 </Button>
 
             </div>
+            {/* Logo - App Name */}
             <div
                 style={{
                     width: '50vw',
@@ -118,6 +120,7 @@ const HeaderBar = (props) => {
                 >Numbrio
                 </div>
             </div>
+            {/* App Guide */}
             <div
                 style={{
                     // box Control
@@ -138,54 +141,38 @@ const HeaderBar = (props) => {
                         maxWidth: '2.5rem',
                         minHeight: '0rem',
                         maxHeight: '2.5rem',
-                        width: '50%',
-                        height: '100%',
+                        width: '70%',
+                        height: '76%',
                         // border: '1px solid red',
                         borderRadius: '50%',
-                        // display: 'flex',
-                        // justifyContent: "center",
-                        // alignItems: "center",
-                        // textAlign: 'center',
+                        // backgroundColor: 'black',
+                        display: 'flex',
+                        justifyContent: "center",
+                        alignItems: "center",
+                        textAlign: 'center',
 
                         // zIndex: -5,
                     }}
-                // startIcon={<Avatar
-                //     src={baseball}
-                //     style={{
-                //         // border: '1px solid blue',
-                //         // display: 'flex',
-                //         // justifyContent: "center",
-                //         // alignItems: "center",
-                //         // textAlign: 'center',
-                //         marginLeft: '15%'
-                //     }}
-                //     rel="baseball icon for how to play the game"
-                // />}
                 >
                     <img
-                        src={baseball} width="35vw" height="35vh" rel="baseball icon for how to play the game"
+                        src={baseball} width="39vw" height="39vh" rel="baseball icon for how to play the game"
                     />
                     <div
+                        id='guidequestion'
                         style={{
                             position: 'absolute',
                             zIndex: 2,
-                            top: '7.5%',
-                            left: '37%',
+                            // top: '1%',
+                            left: '34%',
                             fontSize: '150%',
                             fontWeight: 'bold',
-                            color: 'indigo',
+                            color: 'crimson',
                             // transform: translate('-50 %', '-50 %'),
                         }}
                     >?</div>
                 </Button>
             </div>
-
-
-
             {/* DIALOG PART */}
-
-
-
             <Dialog
                 // style={{
                 //     width: '100vw',

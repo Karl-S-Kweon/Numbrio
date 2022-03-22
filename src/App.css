@@ -277,6 +277,29 @@ Button:focus {
   transform: scale3d(1.2, 1.2, 1.2); 
   border-color: blue;
 } */
+@media (prefers-reduced-motion: no-preference) {
+  #guidequestion {
+    animation: qm-jump 2s linear infinite;
+  }
+}
+
+@keyframes qm-jump {
+  from, to {
+    /* top: '5%'; */
+    transform: rotateY(0deg);
+    bottom: -10%;
+    /* transform: translateX('1%') rotateY(0deg) */
+  }
+  50% {
+    /* top: '-15%'; */
+    transform: rotateY(180deg);
+    bottom: 5%;
+    opacity: 0%;
+    /* transform: translateX('-6%%') rotateY(360deg) */
+  }
+}
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   #guideblock {
