@@ -182,34 +182,27 @@ const Numbrio = () => {
             </div>
 
             <Snackbar
-                // className='snack'
-                // sx={
-                //     (state.row < 3 ?
-                //         {
-                //             top: "70vh",
-                //             height: "10vh",
-                //             marginLeft: "0vw",
-                //             paddingTop: '-50%',
-                //             zIndex: 5,
-                //             // border: 'solid black 1px',
-                //         } : {
-                //             top: "11vh",
-                //             height: "11vh",
-                //             marginLeft: "18%",
-                //             zIndex: 5,
-                //         })
-                // }
+                className='snack'
+                sx={
+                    (state.row < 3 ?
+                        {
+                            top: "65vh",
+                            // border: 'solid black 1px',
+                        } : {
+                            top: "13vh",
+                        })
+                }
                 style={
                     !state.gameOver ?
                         {
-                            top: "65vh",
+                            // top: "65vh",
                             height: "10vh",
                             marginLeft: "20vw",
                             paddingTop: '-50%',
                             zIndex: 5,
                             width: "60%",
                         } : {
-                            top: "65vh",
+                            // top: "65vh",
                             height: "10vh",
                             marginLeft: "20vw",
                             paddingTop: '-50%',
