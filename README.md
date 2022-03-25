@@ -7,7 +7,7 @@
 <br/>
 
 ## Assignments
-#### The purpose of the project was to review my web skills. <br/> The result seems very nice, but I still want to expand functionalities of this proejct. 
+#### The purpose of the project was to review my web skills. <br/> The result seems very nice, but I still want to scale up this proejct. 
 #### 1. Use Redux and SCSS - Refactoring app structures & code to improve Design, UX, and App Lifecycle <br/> 2. Add Back-End Side - The game algorithm will communicate with a server using Restful Service(s).<br/> 3. More powerful Game Realted Features - Hard Mode, Play Stats and more. <br/> 4. DB side will may be considered (to make this a fullstack app) when all ohter updates are done.
 <br/>
 
