@@ -35,7 +35,7 @@
 <br/>
 
 ## Ackenowledgements
-#### To Wordle Team for the inspiration on UI/UX. They recently lacunced <a href="https://www.wordle2.in/">Wordle2</a><br/> To all contirubutors for `React | MUI | Emotion | HTML | CSS | Javascript`<br/>Family, and freidens for all supports (Designs, UX and others)
+#### To Wordle Team for the inspiration on UI/UX. <br/> To all contirubutors for `React | MUI | Emotion | HTML | CSS | Javascript`<br/>Family, and freidens for all supports (Designs, UX and others)
 <br/>
 
 ## App Overview
