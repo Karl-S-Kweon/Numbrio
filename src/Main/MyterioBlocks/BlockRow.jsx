@@ -3,8 +3,7 @@ import React, { useReducer, useEffect } from 'react'; // useReducer
 // import { Snackbar } from "@material-ui/core";
 import { List, Grow } from "@mui/material/";
 import Block from './Block'
-import Answer from '../Answer/AnswerKey'
-
+// import Answer from '../Answer/AnswerKey'
 
 const BlockRow = (props) => {
 
@@ -54,8 +53,8 @@ const BlockRow = (props) => {
     let backgroundColor = 'pink'
 
     const getTrialResult = () => {
-        let check = Answer
-
+        let check = props.code
+        // console.log(check)
         if (props.data !== undefined && props.data.length === 4 && props.message === 'Enter') {
             // console.log('Check begins')
             let i = 0
@@ -71,7 +70,7 @@ const BlockRow = (props) => {
                     state.backgroundColor[i] = 'red'
                     // backgroundColor='red'
                 }
-                else if (Answer.includes(props.data[i])) {
+                else if (check.includes(props.data[i])) {
                     setState({
                         result: {
                             // strike: state.result.strike,

@@ -5,10 +5,12 @@ import Keyboards from './Keyboards/Keyboards';
 import MysterioBlocks from './MyterioBlocks/MyterioBlocks';
 import HeaderBar from './Header/HeaderBar'
 // import { fontFamily } from '@mui/system';
+import serverCode from './Answer/AnswerKey'
+// import serverCode from './Answer/fetcher'
 
 // An example of a React Functional Component using JSX syntax
 const Numbrio = () => {
-    let px = document.documentElement.style.setProperty('innerheight', `${window.innerHeight / 100}px`);
+    document.documentElement.style.setProperty('innerheight', `${window.innerHeight / 100}px`);
 
     const initialState = {
         data: [
@@ -32,17 +34,21 @@ const Numbrio = () => {
         },
         gameOver: false,
         rowChanged: false,
+        code: []
     };
 
     const reducer = (state, newState) => ({ ...state, ...newState });
     const [state, setState] = useReducer(reducer, initialState);
 
-    useEffect(() => {
+    useEffect( async () => {
         // setState({ data: state.data })
         // state.data[1]=[];
+        
+        state.code = await serverCode
+        // console.log(code)
     })
 
-    // let gameOver = false
+    // console.log(state.code)
 
     const msgFromBlock = (msg) => {
         // console.log(msg[0], ' ', msg[1])
@@ -152,7 +158,7 @@ const Numbrio = () => {
             </div>
         </Button >
     );
-
+    
     const snackbarClose = (event, reason) => {
         if (reason === "clickaway") {
             // setState({ snackOn: false })
@@ -175,7 +181,7 @@ const Numbrio = () => {
                 <HeaderBar />
             </div>
             <div className="divBody">
-                <MysterioBlocks data={state.data} row={state.row} message={state.msg} getFromChild={msgFromBlock} />
+                <MysterioBlocks data={state.data} row={state.row} message={state.msg} code={state.code} getFromChild={msgFromBlock} />
             </div>
             <div className="divFooter">
                 <Keyboards data={state.data} row={state.row} getFromChild={msgFromKey} />
@@ -186,7 +192,7 @@ const Numbrio = () => {
                 sx={
                     (state.row < 3 ?
                         {
-                            top: "65vh",
+                            top: "70vh",
                             // border: 'solid black 1px',
                         } : {
                             top: "13vh",
@@ -241,7 +247,7 @@ const Numbrio = () => {
                                 textAlign: 'center',
                                 alignContent: 'center',
                                 alignSelf: 'center',
-                                // border: 'solid white 2px',l                         3                3              3    2        3   2              3            3     2           3    
+                                // border: 'solid white 2px'
                             }}
                         >
                             {state.snack}

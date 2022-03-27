@@ -107,7 +107,7 @@ const MysterioBox = (props) => {
     // ));
     // console.log(Answer)    
     let BlockRows = index.map((idx) => (
-        (<BlockRow data={props.data[idx]} key={idx} row={row} message={props.message} marginBtm={idx===5? '0.0rem' : '0'} getFromChild={msgFromChild} />)
+        (<BlockRow data={props.data[idx]} code={props.code} key={idx} row={row} message={props.message} marginBtm={idx===5? '0.0rem' : '0'} getFromChild={msgFromChild} />)
     ));
 
     return (<>

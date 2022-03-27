@@ -37,7 +37,7 @@
 
   position: absolute;
 
-  top: 63vh;
+  top: 70vh;
   left: 75%;
   margin-left: -5%;
   /* To keep square */
@@ -68,7 +68,7 @@
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  
+
   overflow: hidden;
 
   /* margin-bottom: 3rem; */
@@ -76,11 +76,10 @@
 
 .divBody {
   width: 100vw;
-  min-height: 1vh; 
+  min-height: 1vh;
   max-height: calc(innerheight - 21.6vh);
   height: 100%;
   /*100 - 21.6 = 78.4   */
-
 
   /* border: solid red 1px; */
   /* border-radius: 0%; */
@@ -107,7 +106,7 @@
   flex-direction: "column";
   justify-content: center;
   align-items: "center";
-  
+
   /* margin-top: 0.5rem; */
 }
 
@@ -159,6 +158,19 @@
   animation-iteration-count: "initial";
 }
 
+#DialogContentText {
+  /* background-color: "black"; */
+  width: "4vw";
+  height: "10%";
+  max-height: "20vh";
+  min-height: "2vh";
+  border: "1px solid blue";
+  display: "flex";
+  justify-content: "center";
+  align-items: "center";
+  margin: "0px 1vw";
+}
+
 /* .dialog {
   overflow-x: hidden;
   overflow-y: hidden;
@@ -199,31 +211,80 @@ Button:focus {
 } */
 @media (prefers-reduced-motion: no-preference) {
   #guidequestion {
-    animation: qm-jump 2s linear infinite;
+    animation: qm-jump 5s linear infinite;
   }
 }
 
 @keyframes qm-jump {
-  from, to {
+  from,
+  to {
     /* top: '5%'; */
-    transform: rotateY(0deg);
-    bottom: -0%;
+    /* transform: rotateY(0deg); */
+    bottom: 0%;
     /* transform: translateX('1%') rotateY(0deg) */
   }
-  50% {
+  1% {
     /* top: '-15%'; */
-    transform: rotateY(180deg);
-    bottom: 8%;
-    opacity: 0%;
+    /* transform: rotateY(180deg); */
+    bottom: -1%;
+    /* opacity: 0%; */
+    /* transform: translateX('-6%%') rotateY(360deg) */
+  }
+  2% {
+    /* top: '-15%'; */
+    /* transform: rotateY(180deg); */
+    bottom: -2%;
+    /* opacity: 0%; */
+    /* transform: translateX('-6%%') rotateY(360deg) */
+  }
+  3% {
+    /* top: '-15%'; */
+    /* transform: rotateY(180deg); */
+    bottom: -3%;
+    /* opacity: 0%; */
+    /* transform: translateX('-6%%') rotateY(360deg) */
+  }
+  5% {
+    /* top: '-15%'; */
+    /* transform: rotateY(180deg); */
+    bottom: 15%;
+    /* opacity: 0%; */
+    /* transform: translateX('-6%%') rotateY(360deg) */
+  }
+  10% {
+    /* top: '-15%'; */
+    /* transform: rotateY(180deg); */
+    bottom: 17%;
+    /* opacity: 0%; */
+    /* transform: translateX('-6%%') rotateY(360deg) */
+  }
+  15% {
+    /* top: '-15%'; */
+    /* transform: rotateY(180deg); */
+    bottom: 20%;
+    /* opacity: 0%; */
+    /* transform: translateX('-6%%') rotateY(360deg) */
+  }
+  25% {
+    /* top: '-15%'; */
+    /* transform: rotateY(0deg); */
+    bottom: -2%;
+    /* opacity: 100%; */
+    /* transform: translateX('-6%%') rotateY(360deg) */
+  }
+  30% {
+    /* top: '-15%'; */
+    /* transform: rotateY(0deg); */
+    bottom: 0%;
+    /* opacity: 100%; */
     /* transform: translateX('-6%%') rotateY(360deg) */
   }
 }
 
-
-
 @media (prefers-reduced-motion: no-preference) {
   #guideblock {
-    animation: block-spin 1s linear;
+    animation: block-spin 6s linear;
+    animation-delay: 0.01s;
   }
 }
 
@@ -231,8 +292,8 @@ Button:focus {
   /* 프레임 끝나면 블락 하단 짤렸다가 다시 생김
    */
   from {
+    /* transform: rotateY(0deg); */
     transform: rotateY(0deg);
-    transform: rotateX(0deg);
     background-color: white;
     border-color: darkgrey;
   }
@@ -254,7 +315,7 @@ Button:focus {
     transform: rotateY(70deg);
   }*/
   50% {
-    transform: rotateY(240deg);
+    transform: rotateY(90deg);
     background-color: white;
     border-color: darkgrey;
     /* transform: rotateX(0deg); */
@@ -273,8 +334,9 @@ Button:focus {
   }  */
   to {
     /* transform: rotateX(0deg); */
-    transform: rotateY(360deg);
-
+    transform: rotateY(0deg);
+    /* background-color: white;
+    border-color: darkgrey; */
     /* transform: rotateY(360deg); */
     /* background-color: red; */
   }
